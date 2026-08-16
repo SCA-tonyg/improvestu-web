@@ -1,0 +1,5 @@
+# Placeholder — replace when Play / App Store URLs are live
+# FARU_PLAY=
+# FARU_APPSTORE=
+# FABU_PLAY=
+# FABU_APPSTORE=
