@@ -457,6 +457,60 @@ a:hover {
   }
 }
 
+.legal-doc {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem;
+}
+
+.legal-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.legal-doc h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+
+.legal-fabu .legal-doc h1 {
+  color: var(--fabu);
+}
+
+.legal-doc h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 1.75rem 0 0.6rem;
+}
+
+.legal-doc ul {
+  padding-left: 1.2rem;
+}
+
+.legal-doc li + li {
+  margin-top: 0.4rem;
+}
+
+.legal-doc a {
+  color: var(--fabu);
+  font-weight: 600;
+}
+
+.legal-footer-links {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
