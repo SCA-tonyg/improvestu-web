@@ -2,7 +2,13 @@
 
 Static landing site for Improvestu — download hub for **FARU** and **FABU**.
 
-Store buttons are placeholders until the apps are listed. Update the `href`s in `index.html` and remove the `is-placeholder` class when links are live.
+- `/` — home (both apps)
+- `/faru/` — FARU product page (features, safety, store placeholders)
+- `/fabu/` — FABU product page (features, safety, store placeholders)
+
+Store buttons are placeholders until the apps are listed. Update the `href`s in
+`index.html`, `faru/index.html`, and `fabu/index.html` (and remove `is-placeholder`)
+when links are live.
 
 ## Local preview
 

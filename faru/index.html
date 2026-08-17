@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FARU — Find A Ride University</title>
+  <meta
+    name="description"
+    content="FARU connects campus rides with classmates who share your schedule. Chat, meet, and ride with students you already know."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="product-page theme-faru">
+  <div class="atmosphere atmosphere-faru" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="wordmark" href="/">Improvestu</a>
+    <nav>
+      <a href="/faru/" aria-current="page">FARU</a>
+      <a href="/fabu/">FABU</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="app-hero">
+      <div class="app-hero-copy">
+        <p class="eyebrow">Message Board for Rides</p>
+        <h1 class="app-brand">FARU</h1>
+        <p class="lede">
+          Campus rides with classmates who already share your schedule — chat first, meet on campus, ride together.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-accent" href="#download">Get FARU</a>
+          <a class="btn btn-ghost" href="#safety">Safety first</a>
+        </div>
+      </div>
+      <div class="app-hero-visual" aria-hidden="true">
+        <img class="app-hero-logo" src="../assets/faru_logo.png" alt="" />
+      </div>
+    </section>
+
+    <section id="features" class="app-section">
+      <h2 class="section-title">Built for student rides</h2>
+      <p class="section-copy">
+        Post a ride, find a match, and stay in the loop with people from your campus — not strangers from a generic carpool board.
+      </p>
+      <ul class="feature-rail">
+        <li>
+          <strong>Schedule-aware matching</strong>
+          <span>Connect with riders and drivers who share courses, corridors, or campus routines.</span>
+        </li>
+        <li>
+          <strong>Chat before you commit</strong>
+          <span>Message in-app to align on timing, pickup, and who’s going where.</span>
+        </li>
+        <li>
+          <strong>Quick Rides &amp; campus events</strong>
+          <span>Same-day hops plus game-day, concert, and career-fair style campus trips.</span>
+        </li>
+        <li>
+          <strong>Nearby universities</strong>
+          <span>Browse campuses in your area when your ride stretches past one school.</span>
+        </li>
+        <li>
+          <strong>Ride requests &amp; alerts</strong>
+          <span>Ask for a seat or get nudged when corridor matches open up.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="safety" class="app-section">
+      <h2 class="section-title">Safety that fits campus life</h2>
+      <p class="section-copy">
+        FARU is a message board for campus rides — not a taxi service. You stay in control of who you meet and when you go.
+      </p>
+      <ul class="feature-rail feature-rail-safety">
+        <li>
+          <strong>Classmates over strangers</strong>
+          <span>Built around school communities and shared schedules so rides start with familiar context.</span>
+        </li>
+        <li>
+          <strong>Talk, then travel</strong>
+          <span>Use chat to confirm details before you share a location or hop in a car.</span>
+        </li>
+        <li>
+          <strong>Meet where it feels right</strong>
+          <span>Pick well-lit, public campus spots you already know.</span>
+        </li>
+        <li>
+          <strong>Report &amp; block</strong>
+          <span>Tools to cut off bad actors and flag problems to the team.</span>
+        </li>
+        <li>
+          <strong>You’re the driver of decisions</strong>
+          <span>FARU doesn’t process payments for rides or send drivers to your door.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="download" class="app-section download-block">
+      <h2 class="section-title">Download</h2>
+      <p class="section-copy">
+        Store listings are in progress. Buttons unlock when FARU is published on Google Play and the App Store.
+      </p>
+      <div class="store-row">
+        <a class="store-btn is-placeholder" href="#" aria-disabled="true" tabindex="-1">
+          <span class="store-label">Google Play</span>
+          <span class="store-state">Coming soon</span>
+        </a>
+        <a class="store-btn is-placeholder" href="#" aria-disabled="true" tabindex="-1">
+          <span class="store-label">App Store</span>
+          <span class="store-state">Coming soon</span>
+        </a>
+      </div>
+      <p class="legal-line">
+        Legal:
+        <a href="/faru/privacy/">Privacy</a>
+        ·
+        <a href="/faru/terms/">Terms</a>
+        ·
+        <a href="/faru/account-deletion/">Account deletion</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="y"></span> Shot Calla Games, LLC · Improvestu</span>
+    <a class="muted" href="/">All apps</a>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    document.querySelectorAll(".store-btn.is-placeholder").forEach((el) => {
+      el.addEventListener("click", (e) => e.preventDefault());
+    });
+  </script>
+</body>
+</html>
