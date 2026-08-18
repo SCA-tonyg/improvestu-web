@@ -4,6 +4,7 @@ Static landing site for Improvestu — download hub for **FARU** and **FABU**.
 
 - `/` — home (both apps)
 - `/faru/` — FARU product page (features, safety, store placeholders)
+- `/faru/admin-panel/` — FARU campus admin console (admin accounts only)
 - `/fabu/` — FABU product page (features, safety, store placeholders)
 
 Store buttons are placeholders until the apps are listed. Update the `href`s in
