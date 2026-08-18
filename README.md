@@ -6,6 +6,9 @@ Static landing site for Improvestu — download hub for **FARU** and **FABU**.
 - `/faru/` — FARU product page (features, safety, store placeholders)
 - `/faru/admin-panel/` — FARU campus admin console (admin accounts only)
 - `/fabu/` — FABU product page (features, safety, store placeholders)
+- `/fabu/admin-panel/` — FABU staff admin console (admin accounts only)
+
+Keep a root `.nojekyll` so GitHub Pages serves `/fabu/admin-panel/_next/` assets.
 
 Store buttons are placeholders until the apps are listed. Update the `href`s in
 `index.html`, `faru/index.html`, and `fabu/index.html` (and remove `is-placeholder`)
