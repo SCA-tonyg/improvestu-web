@@ -1,18 +1,19 @@
 # improvestu.com
 
-Static landing site for Improvestu — download hub for **FARU** and **FABU**.
+Static landing site for Improvestu — download hub for **FARU** (FABU marketing is hidden until launch).
 
-- `/` — home (both apps)
+- `/` — home (FARU)
 - `/faru/` — FARU product page (features, safety, store placeholders)
 - `/faru/admin-panel/` — FARU campus admin console (admin accounts only)
-- `/fabu/` — FABU product page (features, safety, store placeholders)
-- `/fabu/admin-panel/` — FABU staff admin console (admin accounts only)
+- `/fabu/` — redirects home until FABU launch (product page withheld)
+- `/fabu/admin-panel/` — FABU staff admin console (admin accounts only; not linked publicly)
+- `/fabu/privacy/`, `/fabu/terms/` — legal pages kept for store review; not linked from home
 
 Keep a root `.nojekyll` so GitHub Pages serves `/fabu/admin-panel/_next/` assets.
 
 Store buttons are placeholders until the apps are listed. Update the `href`s in
-`index.html`, `faru/index.html`, and `fabu/index.html` (and remove `is-placeholder`)
-when links are live.
+`index.html` and `faru/index.html` (and remove `is-placeholder`) when links are live.
+Restore FABU on the home page from git history (or re-add the product card) when ready to launch.
 
 ## Local preview
 
