@@ -47,9 +47,9 @@ a:hover {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse 90% 60% at 15% -10%, rgba(0, 229, 255, 0.16), transparent 55%),
-    radial-gradient(ellipse 80% 50% at 95% 5%, rgba(166, 220, 46, 0.14), transparent 50%),
-    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(166, 220, 46, 0.06), transparent 60%),
+    radial-gradient(ellipse 90% 60% at 15% -10%, rgba(0, 229, 255, 0.18), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 90% 10%, rgba(0, 229, 255, 0.08), transparent 55%),
+    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(0, 229, 255, 0.05), transparent 60%),
     linear-gradient(180deg, #0a0c12 0%, var(--bg) 40%, #05060a 100%);
 }
 
@@ -133,7 +133,7 @@ a:hover {
   font-size: clamp(3.4rem, 12vw, 7.5rem);
   line-height: 0.92;
   letter-spacing: -0.03em;
-  background: linear-gradient(120deg, #fff 10%, var(--faru) 48%, var(--fabu) 90%);
+  background: linear-gradient(120deg, #fff 12%, var(--faru) 78%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -222,6 +222,21 @@ a:hover {
   bottom: 0;
   width: 62%;
   animation: rock 6.2s ease-in-out infinite reverse;
+}
+
+.hero-visual-solo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-mark-solo {
+  position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  width: min(72%, 280px);
 }
 
 .apps,
