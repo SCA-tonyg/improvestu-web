@@ -742,6 +742,11 @@ a:hover {
   border-color: var(--accent-line);
 }
 
+.theme-faru .store-btn:not(.is-placeholder),
+.product-faru .store-btn:not(.is-placeholder) {
+  border-color: var(--accent-line, rgba(0, 229, 255, 0.32));
+}
+
 .theme-faru .legal-line a,
 .theme-fabu .legal-line a {
   color: var(--accent);
