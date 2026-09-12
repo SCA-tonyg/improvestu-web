@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /fabu/
 Allow: /faru/
 Allow: /
+Sitemap: https://www.improvestu.com/sitemap.xml
