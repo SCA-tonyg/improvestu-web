@@ -3,7 +3,8 @@
 Static landing site for Improvestu — download hub for **FARU** (FABU marketing is hidden until launch).
 
 - `/` — home (FARU)
-- `/faru/` — FARU product page (features, Free vs FARU+, safety, store links)
+- `/faru/` — FARU product page (how it works, Free vs FARU+, safety FAQ, store links)
+- `/sitemap.xml`, `/llms.txt` — discovery helpers for search and AI assistants
 - `/faru/admin-panel/` — FARU campus admin console (admin accounts only)
 - `/fabu/` — redirects home until FABU launch (product page withheld)
 - `/fabu/admin-panel/` — FABU staff admin console (admin accounts only; not linked publicly)

@@ -841,6 +841,92 @@ a:hover {
   padding-left: 2rem;
 }
 
+.how-steps {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  counter-reset: how;
+}
+
+.how-steps li {
+  display: grid;
+  grid-template-columns: auto minmax(10rem, 0.42fr) 1fr;
+  gap: 0.85rem 1.25rem;
+  align-items: start;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+  counter-increment: how;
+  animation: rise 0.7s ease both;
+}
+
+.how-steps li:nth-child(1) { animation-delay: 0.05s; }
+.how-steps li:nth-child(2) { animation-delay: 0.12s; }
+.how-steps li:nth-child(3) { animation-delay: 0.19s; }
+
+.how-steps li::before {
+  content: counter(how);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--accent, var(--faru));
+  line-height: 1.2;
+  min-width: 1.5rem;
+}
+
+.how-steps strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.how-steps span {
+  color: var(--muted);
+}
+
+.faq-list {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+  padding: 0.85rem 0;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "+";
+  float: right;
+  color: var(--accent, var(--faru));
+  font-weight: 700;
+}
+
+.faq-list details[open] summary::after {
+  content: "–";
+}
+
+.faq-list details p {
+  margin: 0.65rem 0 0.25rem;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
 .feature-rail-safety li {
   border-left: 2px solid transparent;
   padding-left: 0.85rem;
@@ -900,6 +986,24 @@ a:hover {
     padding-left: 0;
     border-top: 1px solid var(--line);
     padding-top: 1.75rem;
+  }
+
+  .how-steps li {
+    grid-template-columns: auto 1fr;
+  }
+
+  .how-steps strong {
+    grid-column: 2;
+  }
+
+  .how-steps span {
+    grid-column: 2;
+  }
+
+  .top nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.65rem 1rem;
   }
 
   .app-hero {

@@ -3,11 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FARU — Find A Ride University</title>
+  <title>FARU — Campus Carpool App for College Students | Improvestu</title>
   <meta
     name="description"
-    content="FARU connects campus rides with classmates who share your schedule. See what’s free and what’s included with FARU+."
+    content="Find a ride with classmates who share your schedule. Chat first, meet on campus, ride together. Free for verified students; FARU+ adds Class Rides, Quick Rides, and wider browse."
   />
+  <link rel="canonical" href="https://www.improvestu.com/faru/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.improvestu.com/faru/" />
+  <meta property="og:title" content="FARU — Campus Carpool App for College Students" />
+  <meta
+    property="og:description"
+    content="Find a ride with classmates who share your schedule. Chat first, meet on campus, ride together. Free tier + FARU+."
+  />
+  <meta property="og:image" content="https://www.improvestu.com/assets/faru_logo.png" />
+  <meta property="og:site_name" content="Improvestu" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FARU — Campus Carpool App for College Students" />
+  <meta
+    name="twitter:description"
+    content="Find a ride with classmates who share your schedule. Chat first, meet on campus, ride together."
+  />
+  <meta name="twitter:image" content="https://www.improvestu.com/assets/faru_logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -15,6 +32,53 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Improvestu",
+        "url": "https://www.improvestu.com/",
+        "logo": "https://www.improvestu.com/assets/faru_logo.png",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Shot Call'a Games, LLC"
+        },
+        "email": "improvestu@gmail.com"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "FARU",
+        "alternateName": "Find A Ride University",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Android, iOS",
+        "url": "https://www.improvestu.com/faru/",
+        "description": "Campus carpool message board for verified college students — chat first, meet on campus, ride with classmates.",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Campus browse, limited ride posts, Ride Requests, chat, and core safety tools."
+          },
+          {
+            "@type": "Offer",
+            "name": "FARU+",
+            "price": "4.99",
+            "priceCurrency": "USD",
+            "description": "Monthly membership after a 30-day free trial. Also available yearly at $49.99."
+          }
+        ],
+        "downloadUrl": [
+          "https://play.google.com/store/apps/details?id=com.faru.faru",
+          "https://apps.apple.com/us/app/faru-find-a-ride-university/id6801682857"
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="product-page theme-faru">
   <div class="atmosphere atmosphere-faru" aria-hidden="true"></div>
@@ -23,6 +87,9 @@
     <a class="wordmark" href="/">Improvestu</a>
     <nav>
       <a href="/faru/" aria-current="page">FARU</a>
+      <a href="#how">How it works</a>
+      <a href="#plans">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="/#contact">Contact</a>
     </nav>
   </header>
@@ -30,10 +97,11 @@
   <main>
     <section class="app-hero">
       <div class="app-hero-copy">
-        <p class="eyebrow">Message Board for Rides</p>
+        <p class="eyebrow">Campus carpool for college students</p>
         <h1 class="app-brand">FARU</h1>
         <p class="lede">
-          Campus rides with classmates who already share your schedule — chat first, meet on campus, ride together.
+          Find a ride with classmates who already share your schedule — not random drivers from a generic app.
+          Chat first, meet on campus, ride together.
         </p>
         <div id="download" class="download-block hero-download">
           <h2 class="section-title">Download</h2>
@@ -68,13 +136,39 @@
           </p>
         </div>
         <div class="cta-row">
+          <a class="btn btn-ghost" href="#how">How it works</a>
           <a class="btn btn-ghost" href="#plans">Free vs FARU+</a>
-          <a class="btn btn-ghost" href="#safety">Safety first</a>
+          <a class="btn btn-ghost" href="#faq">Safety FAQ</a>
         </div>
       </div>
-      <div class="app-hero-visual" aria-hidden="true">
-        <img class="app-hero-logo" src="../assets/faru_logo.png" alt="" />
+      <div class="app-hero-visual">
+        <img
+          class="app-hero-logo"
+          src="../assets/faru_logo.png"
+          alt="FARU app icon — campus carpool for college classmates"
+        />
       </div>
+    </section>
+
+    <section id="how" class="app-section">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-copy">
+        FARU is a message board for campus rides — you stay in control of who you meet and when you go.
+      </p>
+      <ol class="how-steps">
+        <li>
+          <strong>Post a ride or request a seat</strong>
+          <span>Share where you’re headed, or post a Ride Request when you need a seat. Verified students only.</span>
+        </li>
+        <li>
+          <strong>Chat with your match</strong>
+          <span>Align on timing and pickup in-app before you share a live location or hop in a car.</span>
+        </li>
+        <li>
+          <strong>Meet on campus and ride</strong>
+          <span>Pick a public spot you already know. Optional SOS, guardians, and check-ins stay available on the free tier.</span>
+        </li>
+      </ol>
     </section>
 
     <section id="features" class="app-section">
@@ -182,6 +276,52 @@
           <span>FARU doesn’t process payments for rides or send drivers to your door.</span>
         </li>
       </ul>
+    </section>
+
+    <section id="faq" class="app-section">
+      <h2 class="section-title">Safety &amp; trust FAQ</h2>
+      <p class="section-copy">
+        Straight answers to the questions students (and parents) ask before trying a campus ride app.
+      </p>
+      <div class="faq-list">
+        <details>
+          <summary>Is FARU safe?</summary>
+          <p>
+            FARU is built for verified classmates, not random drivers. Chat before you ride, meet on campus,
+            and use report/block if something feels wrong. SOS, guardians, and check-ins are available on the free tier.
+            FARU does not process ride payments or dispatch drivers to your door.
+          </p>
+        </details>
+        <details>
+          <summary>Are these strangers?</summary>
+          <p>
+            Matches are other students at your school (and, with FARU+, nearby campuses). Listings are student-authored
+            board posts — you choose who to message and who to ride with.
+          </p>
+        </details>
+        <details>
+          <summary>Do I need FARU+ to use the app?</summary>
+          <p>
+            No. Verified students can browse campus rides, post a limited number of open rides, request seats,
+            post Ride Requests, chat, and use core safety tools for free. FARU+ unlocks wider browse, Quick Rides,
+            Class Rides, corridor alerts, For you, and an ad-free experience.
+          </p>
+        </details>
+        <details>
+          <summary>How does FARU+ billing work?</summary>
+          <p>
+            Start a 30-day free trial from Membership in the app, then $4.99/month or $49.99/year through Apple or Google.
+            Cancel in your store subscriptions before the trial ends to avoid charges.
+          </p>
+        </details>
+        <details>
+          <summary>Is FARU a taxi or rideshare company?</summary>
+          <p>
+            No. FARU is a campus message board for rides. Students arrange trips with each other. We don’t take a cut of
+            seat prices and we don’t send a driver to you.
+          </p>
+        </details>
+      </div>
     </section>
   </main>
 
