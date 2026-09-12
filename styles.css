@@ -742,6 +742,105 @@ a:hover {
   color: var(--muted);
 }
 
+.plan-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+  margin-top: 1.75rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.75rem;
+}
+
+.plan-col {
+  min-width: 0;
+}
+
+.plan-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.plan-name {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.plan-col-plus .plan-name {
+  color: var(--accent, var(--faru));
+}
+
+.plan-price {
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.plan-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.plan-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  padding-left: 1.15rem;
+  position: relative;
+  animation: rise 0.7s ease both;
+}
+
+.plan-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.plan-col-plus .plan-list li::before {
+  background: var(--accent, var(--faru));
+}
+
+.plan-list li:nth-child(1) { animation-delay: 0.04s; }
+.plan-list li:nth-child(2) { animation-delay: 0.07s; }
+.plan-list li:nth-child(3) { animation-delay: 0.1s; }
+.plan-list li:nth-child(4) { animation-delay: 0.13s; }
+.plan-list li:nth-child(5) { animation-delay: 0.16s; }
+.plan-list li:nth-child(6) { animation-delay: 0.19s; }
+.plan-list li:nth-child(7) { animation-delay: 0.22s; }
+.plan-list li:nth-child(8) { animation-delay: 0.25s; }
+.plan-list li:nth-child(9) { animation-delay: 0.28s; }
+.plan-list li:nth-child(10) { animation-delay: 0.31s; }
+.plan-list li:nth-child(11) { animation-delay: 0.34s; }
+.plan-list li:nth-child(12) { animation-delay: 0.37s; }
+
+.plan-note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.plan-col-plus {
+  border-left: 1px solid var(--line);
+  padding-left: 2rem;
+}
+
 .feature-rail-safety li {
   border-left: 2px solid transparent;
   padding-left: 0.85rem;
@@ -792,6 +891,17 @@ a:hover {
 }
 
 @media (max-width: 860px) {
+  .plan-split {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-col-plus {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 1.75rem;
+  }
+
   .app-hero {
     grid-template-columns: 1fr;
     min-height: auto;
