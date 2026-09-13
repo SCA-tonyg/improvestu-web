@@ -729,6 +729,7 @@ a:hover {
 .feature-rail li:nth-child(3) { animation-delay: 0.15s; }
 .feature-rail li:nth-child(4) { animation-delay: 0.2s; }
 .feature-rail li:nth-child(5) { animation-delay: 0.25s; }
+.feature-rail li:nth-child(6) { animation-delay: 0.3s; }
 
 .feature-rail strong {
   font-family: var(--font-display);
@@ -839,6 +840,252 @@ a:hover {
 .plan-col-plus {
   border-left: 1px solid var(--line);
   padding-left: 2rem;
+}
+
+.plan-col-featured {
+  position: relative;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--accent, var(--faru)) 8%, transparent);
+  padding: 1.25rem 1.25rem 1.25rem 2rem;
+  border: 1px solid color-mix(in srgb, var(--accent, var(--faru)) 35%, var(--line));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent, var(--faru)) 12%, transparent);
+}
+
+.plan-badge {
+  display: inline-block;
+  margin: 0 0 0.55rem;
+  padding: 0.28rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg, #0b1220);
+  background: var(--accent, var(--faru));
+  border-radius: 999px;
+}
+
+.plan-save {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--accent, var(--faru));
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.plan-anchor {
+  margin: -0.35rem 0 1rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-width: 28rem;
+}
+
+.plan-more-link {
+  margin-top: 1.5rem;
+}
+
+.hero-scope {
+  margin: 0.75rem 0 0;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.founder-section {
+  border-top: 1px solid var(--line);
+}
+
+.founder-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem 1.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.founder-photo,
+.testimonial-photo,
+.stub-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent, var(--faru)) 18%, var(--line));
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+img.founder-photo {
+  display: block;
+  width: 112px;
+  height: 112px;
+}
+
+.stub-initials {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--accent, var(--faru));
+  letter-spacing: 0.04em;
+}
+
+.founder-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.founder-role {
+  margin: 0.2rem 0 0.85rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.founder-story {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.founder-link {
+  margin: 0.9rem 0 0;
+  font-size: 0.95rem;
+}
+
+.founder-link a {
+  color: var(--accent, var(--faru));
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.founder-link a:hover {
+  text-decoration: underline;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.testimonial-card {
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1.1rem;
+  background: color-mix(in srgb, var(--ink) 2%, transparent);
+}
+
+.testimonial-card.stub-card {
+  border-style: dashed;
+  opacity: 0.92;
+}
+
+.testimonial-card blockquote {
+  margin: 0.75rem 0;
+}
+
+.testimonial-card blockquote p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.testimonial-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.stub-block {
+  margin-top: 1.25rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px dashed var(--line);
+  border-radius: 0.75rem;
+}
+
+.stub-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.campus-density-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.stub-chip {
+  padding: 0.45rem 0.75rem;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.compare-links a {
+  color: var(--accent, var(--faru));
+  text-decoration: none;
+}
+
+.compare-links a:hover {
+  text-decoration: underline;
+}
+
+.page-prose {
+  max-width: 42rem;
+}
+
+.page-prose p,
+.page-prose li {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.page-prose h2 {
+  margin-top: 2rem;
+}
+
+.vs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.vs-table th,
+.vs-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.75rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.vs-table th {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.foot-links {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
 }
 
 .how-steps {
@@ -1025,6 +1272,35 @@ a:hover {
     padding-left: 0;
     border-top: 1px solid var(--line);
     padding-top: 1.75rem;
+  }
+
+  .plan-col-featured {
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .app-brand {
+    font-size: clamp(2.75rem, 18vw, 5rem);
+    line-height: 0.95;
+    overflow-wrap: anywhere;
+  }
+
+  .cta-row {
+    flex-wrap: wrap;
+  }
+
+  .cta-row .btn {
+    white-space: normal;
+    text-align: left;
+    line-height: 1.25;
+  }
+
+  .founder-card {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
   }
 
   .how-steps li {
