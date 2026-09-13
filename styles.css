@@ -1082,6 +1082,90 @@ img.founder-photo {
   color: var(--ink);
 }
 
+.vs-table-wrap {
+  overflow-x: auto;
+  margin-top: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vs-table-emphasis {
+  min-width: 36rem;
+}
+
+.vs-table-emphasis .vs-faru-col {
+  background: color-mix(in srgb, var(--accent, var(--faru)) 10%, transparent);
+  color: var(--ink);
+}
+
+.vs-table-emphasis th.vs-faru-col {
+  color: var(--accent, var(--faru));
+}
+
+.lede-inline {
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.lede-inline strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.vs-verdict {
+  margin: 1.75rem 0;
+  padding: 1.15rem 1.25rem;
+  border-left: 3px solid var(--accent, var(--faru));
+  background: color-mix(in srgb, var(--accent, var(--faru)) 8%, transparent);
+  max-width: 42rem;
+}
+
+.vs-verdict-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, var(--faru));
+}
+
+.vs-verdict p:last-child {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.vs-wins {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 42rem;
+}
+
+.vs-wins li {
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.vs-wins li strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.vs-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
 .foot-links {
   display: inline-flex;
   gap: 0.35rem;
