@@ -1005,6 +1005,139 @@ img.founder-photo {
   color: var(--muted);
 }
 
+.testimonial-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.testimonial-head .testimonial-photo {
+  width: 44px;
+  height: 44px;
+}
+
+.testimonial-head .stub-initials {
+  font-size: 0.75rem;
+}
+
+.stub-school {
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin-top: 0.85rem;
+}
+
+.store-badge-link {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.store-badge-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.store-rating-note {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.plan-compare {
+  margin: 0 0 1.1rem;
+  padding: 0.85rem 0.95rem;
+  border-left: 3px solid var(--accent, var(--faru));
+  background: color-mix(in srgb, var(--accent, var(--faru)) 8%, transparent);
+  max-width: 28rem;
+}
+
+.plan-compare-title {
+  margin: 0 0 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent, var(--faru));
+}
+
+.plan-compare p:last-child {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.outcome-steps {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  counter-reset: outcome;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+}
+
+.outcome-steps li {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1.15rem 1rem 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+  counter-increment: outcome;
+  position: relative;
+}
+
+.outcome-steps li::before {
+  content: counter(outcome);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--accent, var(--faru));
+  line-height: 1;
+}
+
+.outcome-steps strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.outcome-steps span {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.feature-rail-safety a {
+  color: var(--accent, var(--faru));
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.feature-rail-safety a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+  .outcome-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .outcome-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
 .stub-block {
   margin-top: 1.25rem;
   padding: 1.1rem 1.2rem;

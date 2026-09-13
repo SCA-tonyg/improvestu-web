@@ -35,125 +35,154 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
+    "@type": "Organization",
+    "@id": "https://www.improvestu.com/#organization",
+    "name": "Improvestu",
+    "url": "https://www.improvestu.com/",
+    "logo": "https://www.improvestu.com/assets/faru_logo.png",
+    "email": "improvestu@gmail.com",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Shot Call'a Games, LLC",
+      "url": "https://www.linkedin.com/company/shot-call-a-games-llc"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/shot-call-a-games-llc",
+      "https://www.linkedin.com/in/tony-gunn-jr-75098349"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": "https://www.improvestu.com/faru/#product",
+    "name": "FARU",
+    "alternateName": "Find A Ride University",
+    "description": "Campus carpool message board for verified college students — find a ride home for break, weekends, and hometown trips. Chat first, meet on campus, ride with classmates.",
+    "image": "https://www.improvestu.com/assets/faru_logo.png",
+    "url": "https://www.improvestu.com/faru/",
+    "brand": {
+      "@type": "Brand",
+      "name": "FARU"
+    },
+    "manufacturer": {
+      "@id": "https://www.improvestu.com/#organization"
+    },
+    "offers": [
       {
-        "@type": "Organization",
-        "@id": "https://www.improvestu.com/#organization",
-        "name": "Improvestu",
-        "url": "https://www.improvestu.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.improvestu.com/assets/faru_logo.png"
-        },
-        "parentOrganization": {
-          "@type": "Organization",
-          "name": "Shot Call'a Games, LLC",
-          "url": "https://www.linkedin.com/company/shot-call-a-games-llc"
-        },
-        "email": "improvestu@gmail.com",
-        "sameAs": [
-          "https://www.linkedin.com/company/shot-call-a-games-llc"
-        ]
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.improvestu.com/faru/",
+        "description": "Campus browse, limited ride posts, Ride Requests, chat, and core safety tools."
       },
       {
-        "@type": "SoftwareApplication",
-        "@id": "https://www.improvestu.com/faru/#app",
-        "name": "FARU",
-        "alternateName": "Find A Ride University",
-        "applicationCategory": "TravelApplication",
-        "operatingSystem": "Android, iOS",
-        "url": "https://www.improvestu.com/faru/",
-        "image": "https://www.improvestu.com/assets/faru_logo.png",
-        "description": "Campus carpool message board for verified college students — find a ride home for break, weekends, and hometown trips. Chat first, meet on campus, ride with classmates.",
-        "author": {
-          "@type": "Person",
-          "name": "Tony Gunn Jr",
-          "url": "https://www.linkedin.com/in/tony-gunn-jr-75098349"
-        },
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Free",
-            "price": "0",
-            "priceCurrency": "USD",
-            "description": "Campus browse, limited ride posts, Ride Requests, chat, and core safety tools."
-          },
-          {
-            "@type": "Offer",
-            "name": "FARU+ monthly",
-            "price": "4.99",
-            "priceCurrency": "USD",
-            "description": "Monthly membership after a 30-day free trial."
-          },
-          {
-            "@type": "Offer",
-            "name": "FARU+ yearly",
-            "price": "49.99",
-            "priceCurrency": "USD",
-            "description": "Annual membership — save about 17% vs paying monthly."
-          }
-        ],
-        "downloadUrl": [
-          "https://play.google.com/store/apps/details?id=com.faru.faru",
-          "https://apps.apple.com/us/app/faru-find-a-ride-university/id6801682857"
-        ],
-        "publisher": {
-          "@id": "https://www.improvestu.com/#organization"
+        "@type": "Offer",
+        "name": "FARU+ monthly",
+        "price": "4.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.improvestu.com/faru/pricing/",
+        "description": "Monthly membership after a 30-day free trial."
+      },
+      {
+        "@type": "Offer",
+        "name": "FARU+ yearly",
+        "price": "49.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.improvestu.com/faru/pricing/",
+        "description": "Annual membership — save about 17% vs paying monthly."
+      }
+    ],
+    "additionalType": "https://schema.org/SoftwareApplication"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FARU",
+    "alternateName": "Find A Ride University",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Android, iOS",
+    "url": "https://www.improvestu.com/faru/",
+    "image": "https://www.improvestu.com/assets/faru_logo.png",
+    "description": "Campus carpool message board for verified college students — find a ride home for break, weekends, and hometown trips.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "USD"
+      }
+    ],
+    "downloadUrl": [
+      "https://play.google.com/store/apps/details?id=com.faru.faru",
+      "https://apps.apple.com/us/app/faru-find-a-ride-university/id6801682857"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.improvestu.com/faru/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is FARU safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FARU is built for verified classmates, not random drivers. Chat before you ride, meet on campus, and use report/block if something feels wrong. SOS, guardians, and check-ins are available on the free tier. FARU does not process ride payments or dispatch drivers to your door."
         }
       },
       {
-        "@type": "FAQPage",
-        "@id": "https://www.improvestu.com/faru/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is FARU safe?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "FARU is built for verified classmates, not random drivers. Chat before you ride, meet on campus, and use report/block if something feels wrong. SOS, guardians, and check-ins are available on the free tier. FARU does not process ride payments or dispatch drivers to your door."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are these strangers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Matches are other students at your school (and, with FARU+, nearby campuses). Listings are student-authored board posts — you choose who to message and who to ride with."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do I need FARU+ to use the app?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Verified students can browse campus rides, post a limited number of open rides, request seats, post Ride Requests, chat, and use core safety tools for free. FARU+ unlocks wider browse, Quick Rides, Class Rides, corridor alerts, For you, and an ad-free experience."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does FARU+ billing work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Start a 30-day free trial from Membership in the app, then $4.99/month or $49.99/year through Apple or Google. Cancel in your store subscriptions before the trial ends to avoid charges. Annual saves about 17% vs paying monthly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is FARU a taxi or rideshare company?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. FARU is a campus message board for rides. Students arrange trips with each other. We don’t take a cut of seat prices and we don’t send a driver to you."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What if my campus is still growing?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "FARU works best when classmates post hometown and break rides together. Early on a campus, post your ride home or Ride Request so others going your way can find you — density grows one corridor at a time."
-            }
-          }
-        ]
+        "@type": "Question",
+        "name": "Are these strangers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Matches are other students at your school (and, with FARU+, nearby campuses). Listings are student-authored board posts — you choose who to message and who to ride with."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need FARU+ to use the app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Verified students can browse campus rides, post a limited number of open rides, request seats, post Ride Requests, chat, and use core safety tools for free. FARU+ unlocks wider browse, Quick Rides, Class Rides, corridor alerts, For you, and an ad-free experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does FARU+ billing work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start a 30-day free trial from Membership in the app, then $4.99/month or $49.99/year through Apple or Google. Cancel in your store subscriptions before the trial ends to avoid charges. Annual saves about 17% vs paying monthly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is FARU a taxi or rideshare company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. FARU is a campus message board for rides. Students arrange trips with each other. We don’t take a cut of seat prices and we don’t send a driver to you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my campus is still growing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FARU works best when classmates post hometown and break rides together. Early on a campus, post your ride home or Ride Request so others going your way can find you — density grows one corridor at a time."
+        }
       }
     ]
   }
@@ -210,7 +239,42 @@
               <span class="store-state">Available now</span>
             </a>
           </div>
-          <!-- D3.5: App Store ratings not ready yet (insufficient reviews). Add badges when ratings display. -->
+          <div class="store-badges" aria-label="App store listings">
+            <a
+              class="store-badge-link"
+              href="https://apps.apple.com/us/app/faru-find-a-ride-university/id6801682857"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="store-badge-img"
+                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                alt="Download FARU on the App Store"
+                width="120"
+                height="40"
+                loading="lazy"
+              />
+            </a>
+            <a
+              class="store-badge-link"
+              href="https://play.google.com/store/apps/details?id=com.faru.faru"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="store-badge-img"
+                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                alt="Get FARU on Google Play"
+                width="135"
+                height="52"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <p class="store-rating-note">
+            Live on the App Store and Google Play.
+            <!-- Star ratings deferred until stores show enough reviews to display an overview. -->
+          </p>
           <p class="legal-line">
             Legal:
             <a href="/faru/privacy/">Privacy</a>
@@ -229,7 +293,9 @@
       <div class="app-hero-visual">
         <img
           class="app-hero-logo"
-          src="../assets/faru_logo.png"
+          src="../assets/faru/faru_logo-320.png"
+          srcset="../assets/faru/faru_logo-160.png 160w, ../assets/faru/faru_logo-320.png 320w"
+          sizes="(max-width: 860px) 200px, 320px"
           alt="FARU app icon — campus carpool for college classmates"
           width="320"
           height="320"
@@ -289,6 +355,7 @@
         <figure class="shot-frame">
           <img
             src="../assets/faru/home.png"
+            srcset="../assets/faru/home-180w.png 540w, ../assets/faru/home.png 1080w"
             alt="FARU home — start a ride home with someone from campus"
             width="360"
             height="780"
@@ -300,6 +367,7 @@
         <figure class="shot-frame">
           <img
             src="../assets/faru/browse.png"
+            srcset="../assets/faru/browse-180w.png 540w, ../assets/faru/browse.png 1080w"
             alt="FARU Browse rides board with hometown destinations and verified classmates"
             width="360"
             height="780"
@@ -311,6 +379,7 @@
         <figure class="shot-frame">
           <img
             src="../assets/faru/class-rides.png"
+            srcset="../assets/faru/class-rides-180w.png 540w, ../assets/faru/class-rides.png 1080w"
             alt="FARU Class Rides marketplace with seeking and offering posts for campus buildings"
             width="360"
             height="780"
@@ -322,6 +391,7 @@
         <figure class="shot-frame">
           <img
             src="../assets/faru/trip-map.png"
+            srcset="../assets/faru/trip-map-180w.png 540w, ../assets/faru/trip-map.png 1080w"
             alt="FARU ride details with trip map and verified classmate driver for a matched trip"
             width="360"
             height="780"
@@ -333,6 +403,7 @@
         <figure class="shot-frame">
           <img
             src="../assets/faru/safety.png"
+            srcset="../assets/faru/safety-180w.png 540w, ../assets/faru/safety.png 1080w"
             alt="FARU Safety hub with SOS, offline trip card, and Designated Drivers"
             width="360"
             height="780"
@@ -344,6 +415,7 @@
         <figure class="shot-frame">
           <img
             src="../assets/faru/membership.png"
+            srcset="../assets/faru/membership-180w.png 540w, ../assets/faru/membership.png 1080w"
             alt="FARU+ membership — corridor alerts for hometown and break trips"
             width="360"
             height="780"
@@ -353,6 +425,31 @@
           <figcaption>FARU+</figcaption>
         </figure>
       </div>
+    </section>
+
+    <section id="break-trip" class="app-section">
+      <h2 class="section-title">What a break trip looks like</h2>
+      <p class="section-copy">
+        The full ride-home loop — from posting a Ride Request to getting home for break.
+      </p>
+      <ol class="outcome-steps">
+        <li>
+          <strong>Post the need</strong>
+          <span>Student posts “Need a ride to Chicago for Thanksgiving break.”</span>
+        </li>
+        <li>
+          <strong>Match a classmate</strong>
+          <span>Matched with someone from campus already driving that hometown corridor.</span>
+        </li>
+        <li>
+          <strong>Chat, then meet</strong>
+          <span>Confirm timing and pickup in-app, then meet at a public campus spot.</span>
+        </li>
+        <li>
+          <strong>Arrive home</strong>
+          <span>Split gas, ride together, make it home for the holiday — without an Uber bill for 200 miles.</span>
+        </li>
+      </ol>
     </section>
 
     <section id="features" class="app-section">
@@ -413,12 +510,19 @@
       </p>
       <div class="testimonial-grid">
         <article class="testimonial-card">
+          <div class="testimonial-head">
+            <div class="testimonial-photo stub-photo" aria-hidden="true"><span class="stub-initials">PB</span></div>
+            <p class="testimonial-meta"><strong>Phil B.</strong> · University of Michigan</p>
+          </div>
           <blockquote>
             <p>“Having an app like FARU is a game changer! This is overdue!!!”</p>
           </blockquote>
-          <p class="testimonial-meta"><strong>Phil B.</strong> · University of Michigan</p>
         </article>
         <article class="testimonial-card">
+          <div class="testimonial-head">
+            <div class="testimonial-photo stub-photo" aria-hidden="true"><span class="stub-initials">SG</span></div>
+            <p class="testimonial-meta"><strong>Sarah G.</strong> · Washington University</p>
+          </div>
           <blockquote>
             <p>
               “I almost missed going home for the holiday because I couldn’t find a ride before the break from the
@@ -426,9 +530,12 @@
               I need FARU, FARU need me, lbs”
             </p>
           </blockquote>
-          <p class="testimonial-meta"><strong>Sarah G.</strong> · Washington University</p>
         </article>
         <article class="testimonial-card">
+          <div class="testimonial-head">
+            <div class="testimonial-photo stub-photo" aria-hidden="true"><span class="stub-initials">SL</span></div>
+            <p class="testimonial-meta"><strong>Stacy L.</strong></p>
+          </div>
           <blockquote>
             <p>
               “Instead of paying for the weekend home trip by myself, I was able to split the gas, meet some insanely
@@ -436,7 +543,6 @@
               forever. Couldn’t of went any better than this.”
             </p>
           </blockquote>
-          <p class="testimonial-meta"><strong>Stacy L.</strong></p>
         </article>
       </div>
     </section>
@@ -477,6 +583,13 @@
           <p class="plan-anchor">
             Less than one Uber ride home. FARU+ pays for itself on your first break trip.
           </p>
+          <div class="plan-compare">
+            <p class="plan-compare-title">Break-trip math vs per-ride apps</p>
+            <p>
+              A 200-mile ride home on RideAlong: ~$35–50 per ride + 7.25% fee.
+              On FARU+: $4.99/month, unlimited rides, no per-seat cut.
+            </p>
+          </div>
           <ul class="plan-list">
             <li>Browse universities within about 15 miles</li>
             <li>Unlimited open ride posts</li>
@@ -527,6 +640,10 @@
         <li>
           <strong>You’re the driver of decisions</strong>
           <span>FARU doesn’t process payments for rides or send drivers to your door.</span>
+        </li>
+        <li>
+          <strong>Your data stays on campus</strong>
+          <span>We don’t sell your location or schedule data to third parties. See our <a href="/faru/privacy/">Privacy</a> page for what we store.</span>
         </li>
       </ul>
     </section>
