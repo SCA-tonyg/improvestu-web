@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Improvestu — Campus Carpool &amp; Student Apps | FARU</title>
+  <meta
+    name="description"
+    content="Improvestu builds campus apps for students. FARU is a campus carpool message board — find a ride with classmates, chat first, meet on campus."
+  />
+  <link rel="canonical" href="https://www.improvestu.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.improvestu.com/" />
+  <meta property="og:title" content="Improvestu — Campus Carpool &amp; Student Apps" />
+  <meta
+    property="og:description"
+    content="FARU connects college classmates for rides home and across campus. Chat first, meet on campus, ride together."
+  />
+  <meta property="og:image" content="https://www.improvestu.com/assets/faru_logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Improvestu — Campus Carpool &amp; Student Apps" />
+  <meta
+    name="twitter:description"
+    content="FARU connects college classmates for rides. Chat first, meet on campus, ride together."
+  />
+  <meta name="twitter:image" content="https://www.improvestu.com/assets/faru_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="wordmark" href="#top">Improvestu</a>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="/faru/#plans">Pricing</a>
+      <a href="/faru/#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Campus carpool &amp; student apps</p>
+      <h1 class="brand">Improvestu</h1>
+      <p class="lede">
+        Find a ride with classmates from your campus — chat first, meet on campus, ride together.
+        Start with FARU, our student carpool message board.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/faru/">Explore FARU</a>
+        <a class="btn btn-ghost" href="#apps">Download</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
+      <div class="hero-visual hero-visual-solo">
+        <img
+          class="hero-mark hero-mark-faru hero-mark-solo"
+          src="assets/faru_logo.png"
+          alt="FARU app icon — campus carpool for college classmates"
+        />
+      </div>
+    </section>
+
+    <section id="apps" class="apps">
+      <h2 class="section-title">Download</h2>
+      <p class="section-copy">Get FARU on the App Store and Google Play.</p>
+
+      <article class="product product-faru">
+        <div class="product-copy">
+          <p class="product-kicker">Message Board for Rides</p>
+          <h3><a class="product-title-link" href="/faru/">FARU</a></h3>
+          <p>
+            Find A Ride University — campus rides with people you already share a schedule with.
+            Chat, meet, and ride with classmates.
+            A Shot Call'a Games, LLC product in the Improvestu initiative.
+          </p>
+          <div class="store-row">
+            <a
+              class="store-btn"
+              href="https://play.google.com/store/apps/details?id=com.faru.faru"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="store-label">Google Play</span>
+              <span class="store-state">Available now</span>
+            </a>
+            <a
+              class="store-btn"
+              href="https://apps.apple.com/us/app/faru-find-a-ride-university/id6801682857"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="store-label">App Store</span>
+              <span class="store-state">Available now</span>
+            </a>
+          </div>
+          <p class="legal-line">
+            <a href="/faru/">Explore FARU</a>
+            ·
+            Legal:
+            <a href="/faru/privacy/">Privacy</a>
+            ·
+            <a href="/faru/terms/">Terms</a>
+          </p>
+        </div>
+        <div class="product-art">
+          <a href="/faru/"><img src="assets/faru_logo.png" alt="FARU logo" /></a>
+        </div>
+      </article>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-copy">
+        Questions, campus partnerships, or press —
+        <a href="mailto:improvestu@gmail.com">improvestu@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="y"></span> Shot Calla Games, LLC</span>
+    <span class="muted">FARU</span>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    document.querySelectorAll(".store-btn.is-placeholder").forEach((el) => {
+      el.addEventListener("click", (e) => e.preventDefault());
+    });
+  </script>
+</body>
+</html>
