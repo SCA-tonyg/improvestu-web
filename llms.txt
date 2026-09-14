@@ -10,7 +10,7 @@
 
 ## Pricing
 - Free: campus browse, up to 5 open ride posts, Ride Requests, chat, SOS/guardians/check-ins, report/block
-- FARU+: 30-day free trial, then $4.99/mo or $49.99/yr — wider campus browse, unlimited posts, Quick Rides, Class Rides, corridor alerts, For you, event rides, ad-free
+- FARU+: 30-day free trial, then $4.99/mo or $49.99/yr — wider campus browse, unlimited posts, Quick Rides, Class Rides, After class, corridor alerts, For you, event rides, ad-free
 
 ## Downloads
 - Google Play: https://play.google.com/store/apps/details?id=com.faru.faru
