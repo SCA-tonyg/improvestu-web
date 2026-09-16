@@ -426,10 +426,55 @@ a:hover {
   padding: 1.25rem 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
   color: var(--muted);
   font-size: 0.85rem;
   border-top: 1px solid var(--line);
+}
+
+.donate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent, var(--faru, #00e5ff)) 55%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent, var(--faru, #00e5ff)) 92%, #fff),
+    var(--accent, var(--faru, #00e5ff))
+  );
+  color: #041018;
+  font-family: var(--font-display, inherit);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent, var(--faru, #00e5ff)) 18%, transparent);
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+
+.donate-btn:hover {
+  color: #041018;
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--accent, var(--faru, #00e5ff)) 28%, transparent);
+}
+
+.donate-btn:focus-visible {
+  outline: 2px solid var(--accent, var(--faru, #00e5ff));
+  outline-offset: 3px;
+}
+
+.foot-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.55rem;
 }
 
 @keyframes rise {
@@ -1296,12 +1341,6 @@ img.founder-photo {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 2rem;
-  align-items: center;
-}
-
-.foot-links {
-  display: inline-flex;
-  gap: 0.35rem;
   align-items: center;
 }
 
