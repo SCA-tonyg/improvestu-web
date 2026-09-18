@@ -311,6 +311,21 @@
               "Application received. This is not an acceptance.";
             showStatus("ok", msg);
             form.reset();
+            var appId = res && res.application_id;
+            if (appId) {
+              fetch(SUPABASE_URL + "/functions/v1/sendAmbassadorEmail", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  apikey: SUPABASE_ANON_KEY,
+                  Authorization: "Bearer " + SUPABASE_ANON_KEY,
+                },
+                body: JSON.stringify({
+                  kind: "application_received",
+                  application_id: appId,
+                }),
+              }).catch(function () {});
+            }
             return loadChallenges();
           })
           .catch(function (err) {

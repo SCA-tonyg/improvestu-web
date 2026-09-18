@@ -1745,6 +1745,36 @@ img.founder-photo {
   margin-top: 1.25rem;
 }
 
+.ambassador-onboard {
+  margin-top: 1.25rem;
+  max-width: 40rem;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.onboard-terms ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.15rem;
+  line-height: 1.55;
+  color: var(--muted, rgba(255, 255, 255, 0.78));
+}
+
+.onboard-terms li {
+  margin: 0.35rem 0;
+}
+
+.checkbox-field {
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  align-items: start;
+}
+
+.checkbox-field input {
+  width: auto;
+  margin-top: 0.2rem;
+}
+
 @media (max-width: 640px) {
   .field-grid {
     grid-template-columns: 1fr;

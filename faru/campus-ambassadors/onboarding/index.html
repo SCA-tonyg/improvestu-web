@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FARU Campus Ambassador onboarding | Improvestu</title>
+  <meta name="robots" content="noindex" />
+  <meta
+    name="description"
+    content="Accept FARU Campus Ambassador terms to activate your referral code for the challenge."
+  />
+  <link rel="canonical" href="https://www.improvestu.com/faru/campus-ambassadors/onboarding/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../styles.css" />
+</head>
+<body class="product-page theme-faru">
+  <div class="atmosphere atmosphere-faru" aria-hidden="true"></div>
+  <header class="top">
+    <a class="wordmark" href="/">Improvestu</a>
+    <nav>
+      <a href="/faru/">FARU</a>
+      <a href="/faru/campus-ambassadors/">Ambassadors</a>
+      <a href="/faru/about/">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="app-section">
+      <p class="eyebrow">Onboarding</p>
+      <h1 class="section-title">Accept ambassador terms</h1>
+      <p class="section-lead" id="lead">Loading your invitation…</p>
+      <div id="status" class="ambassador-status" hidden></div>
+      <div id="panel" class="ambassador-onboard" hidden>
+        <div class="onboard-meta" id="meta"></div>
+        <div class="onboard-terms">
+          <h2 class="section-title" style="font-size:1.25rem">Program terms</h2>
+          <ul>
+            <li>Represent FARU professionally on campus (social, orgs, word of mouth).</li>
+            <li>Your existing FARU referral code is your ambassador code — we do not create a second code.</li>
+            <li>Referral milestones count only after referred students successfully verify during the challenge window.</li>
+            <li>Base pay ($50 / $50 / $50) is for completing Days 1–30, 31–60, and 61–90 responsibilities as defined by FARU.</li>
+            <li>Milestone bonuses (+$25 / +$50 / +$100 at 25 / 50 / 100) and the #1 bonus (+$250) follow challenge rules, including first-N caps.</li>
+            <li>FARU may pause or end the challenge, adjust ranks for fraud, or deactivate ambassadors who misuse the program.</li>
+            <li>Acceptance is not employment; payments are program rewards subject to eligibility and FARU verification.</li>
+          </ul>
+        </div>
+        <label class="field checkbox-field">
+          <input type="checkbox" id="agree" />
+          <span>I have a FARU account on this university email, I accept these terms, and I understand applying was not the same as acceptance.</span>
+        </label>
+        <button class="btn btn-accent" type="button" id="accept-btn" disabled>Activate Campus Ambassador</button>
+        <p class="form-note">
+          Need the app first?
+          <a href="/faru/#download">Download FARU</a>
+          and sign up with the same .edu email before activating.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="y"></span> Shot Calla Games, LLC · Improvestu</span>
+    <span class="foot-links">
+      <a class="muted" href="/faru/campus-ambassadors/">Ambassadors</a>
+    </span>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    (function () {
+      var SUPABASE_URL = "https://nsaohitwxnojatitcsuj.supabase.co";
+      var SUPABASE_ANON_KEY = "sb_publishable_bute-IFcH7EIMwbkTkUQrw_9XMeg2e5";
+      var params = new URLSearchParams(window.location.search);
+      var token = (params.get("token") || "").trim();
+      var lead = document.getElementById("lead");
+      var statusEl = document.getElementById("status");
+      var panel = document.getElementById("panel");
+      var meta = document.getElementById("meta");
+      var agree = document.getElementById("agree");
+      var btn = document.getElementById("accept-btn");
+
+      function money(cents) {
+        return "$" + (Number(cents || 0) / 100).toFixed(0);
+      }
+      function showStatus(kind, text) {
+        statusEl.hidden = false;
+        statusEl.className = "ambassador-status " + (kind || "");
+        statusEl.textContent = text;
+      }
+      function rpc(name, body) {
+        return fetch(SUPABASE_URL + "/rest/v1/rpc/" + name, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: "Bearer " + SUPABASE_ANON_KEY,
+          },
+          body: JSON.stringify(body || {}),
+        }).then(function (res) {
+          return res.json().then(function (data) {
+            if (!res.ok) {
+              var msg =
+                (data && (data.message || data.error || data.hint)) ||
+                "Request failed (" + res.status + ")";
+              throw new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
+            }
+            return data;
+          });
+        });
+      }
+
+      if (!token) {
+        lead.textContent = "Missing onboarding link.";
+        showStatus("err", "Open the link from your acceptance email.");
+        return;
+      }
+
+      agree.addEventListener("change", function () {
+        btn.disabled = !agree.checked;
+      });
+
+      rpc("get_ambassador_onboarding", { p_token: token })
+        .then(function (data) {
+          var ch = data.challenge || {};
+          lead.textContent =
+            "Welcome, " + (data.full_name || "ambassador") + " — finish activation for " +
+            (ch.university || "your campus") + ".";
+          meta.innerHTML =
+            "<p><strong>" + (ch.title || "Campus Ambassador Challenge") + "</strong></p>" +
+            "<p class='muted'>" + (data.university_email || "") + "</p>" +
+            "<p>Potential up to <strong>" + money(ch.max_potential_cents) + "</strong>" +
+            (data.referral_code
+              ? " · Referral code <strong>" + data.referral_code + "</strong>"
+              : " · Link your FARU account with this email") +
+            "</p>";
+          panel.hidden = false;
+          if (data.status === "active" || data.terms_accepted) {
+            agree.checked = true;
+            btn.disabled = true;
+            btn.textContent = "Already active";
+            showStatus("ok", "You're already an active Campus Ambassador.");
+          }
+        })
+        .catch(function (err) {
+          lead.textContent = "Could not open onboarding.";
+          showStatus("err", (err && err.message) || "Invalid or expired link.");
+        });
+
+      btn.addEventListener("click", function () {
+        if (!agree.checked) return;
+        btn.disabled = true;
+        showStatus("", "Activating…");
+        rpc("accept_ambassador_terms", {
+          p_token: token,
+          p_terms_version: "2026-09-campus-ambassador-v1",
+        })
+          .then(function (res) {
+            showStatus(
+              "ok",
+              (res && res.message) ||
+                "You're active. Your FARU referral code is your ambassador code."
+            );
+            btn.textContent = "Activated";
+            if (res && res.referral_code) {
+              meta.innerHTML +=
+                "<p>Active code: <strong>" + res.referral_code + "</strong></p>";
+            }
+          })
+          .catch(function (err) {
+            showStatus("err", (err && err.message) || "Could not activate.");
+            btn.disabled = !agree.checked;
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
