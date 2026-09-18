@@ -14,7 +14,7 @@
   <meta property="og:title" content="FARU Campus Ambassadors" />
   <meta
     property="og:description"
-    content="Apply to represent FARU on your campus. Founding challenge open at Missouri State — more campuses soon."
+    content="Apply to represent FARU on your campus. Open challenges across recruiting universities — same referral code, multi-campus program."
   />
   <meta property="og:image" content="https://www.improvestu.com/assets/faru/home.png" />
   <meta property="og:site_name" content="Improvestu" />
@@ -49,9 +49,30 @@
         Represent FARU on your campus. Share your referral code, help classmates get home, and compete in a timed
         challenge — using the same FARU account you already have.
       </p>
+      <p class="recruiting-banner" id="recruiting-banner" hidden></p>
       <p class="cta-row">
         <a class="btn btn-accent" href="#apply">Apply now</a>
         <a class="btn btn-ghost" href="/faru/#download">Get the app</a>
+      </p>
+    </section>
+
+    <section class="app-section" id="pay">
+      <h2 class="section-title">How compensation works</h2>
+      <p class="section-lead" id="pay-lead">
+        Transparent pay for the selected challenge. Referral bonuses are cumulative after verified signup.
+      </p>
+      <div class="pay-table-wrap">
+        <table class="pay-table" id="pay-table">
+          <thead>
+            <tr><th>Achievement</th><th>Earnings</th></tr>
+          </thead>
+          <tbody id="pay-body">
+            <tr><td>Loading…</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="form-note" id="pay-note">
+        Milestone awards may be limited to the first ambassadors reaching each level.
       </p>
     </section>
 
@@ -80,14 +101,16 @@
     <section class="app-section" id="apply">
       <h2 class="section-title">Apply</h2>
       <p class="section-lead" id="apply-lead">
-        Pick an open challenge and submit. Applying is not acceptance.
+        Pick an open campus challenge and submit. Applying is not acceptance.
       </p>
+
+      <div id="campus-chips" class="campus-chips" hidden></div>
 
       <div id="apply-status" class="ambassador-status" hidden></div>
 
       <form id="ambassador-form" class="ambassador-form" novalidate>
         <label class="field">
-          <span>Challenge</span>
+          <span>Campus challenge</span>
           <select name="challenge_id" id="challenge_id" required>
             <option value="">Loading challenges…</option>
           </select>
@@ -203,6 +226,13 @@
       var statusEl = document.getElementById("apply-status");
       var submitBtn = document.getElementById("apply-submit");
       var lead = document.getElementById("apply-lead");
+      var banner = document.getElementById("recruiting-banner");
+      var chips = document.getElementById("campus-chips");
+      var payBody = document.getElementById("pay-body");
+      var payLead = document.getElementById("pay-lead");
+      var payNote = document.getElementById("pay-note");
+      var challenges = [];
+      var campusParam = (new URLSearchParams(location.search).get("campus") || "").trim().toLowerCase();
 
       function money(cents) {
         return "$" + (Number(cents || 0) / 100).toFixed(0);
@@ -237,34 +267,133 @@
         });
       }
 
+      function selectedChallenge() {
+        var id = select.value;
+        for (var i = 0; i < challenges.length; i++) {
+          if (challenges[i].id === id) return challenges[i];
+        }
+        return challenges[0] || null;
+      }
+
+      function renderPay(c) {
+        if (!c) {
+          payBody.innerHTML = "<tr><td colspan='2'>No open challenge selected.</td></tr>";
+          return;
+        }
+        var base = Number(c.base_pay_cents || 15000);
+        var seg = Math.round(base / 3);
+        payLead.textContent =
+          "Pay for " + c.university + " — " + c.title + ". Referral bonuses are cumulative after verified signup.";
+        payNote.textContent =
+          "Milestone awards limited to the first " +
+          (c.milestone_cap_per_level || 10) +
+          " ambassadors reaching each level. Max potential " +
+          money(c.max_potential_cents) +
+          ".";
+        payBody.innerHTML =
+          "<tr><td>Complete Days 1–30 responsibilities</td><td>" + money(seg) + "</td></tr>" +
+          "<tr><td>Complete Days 31–60 responsibilities</td><td>+" + money(seg) + "</td></tr>" +
+          "<tr><td>Complete Days 61–90 responsibilities</td><td>+" + money(seg) + "</td></tr>" +
+          "<tr><td>Reach 25 verified referrals</td><td>+" + money(c.milestone_25_cents) + "</td></tr>" +
+          "<tr><td>Reach 50 verified referrals</td><td>+" + money(c.milestone_50_cents) + "</td></tr>" +
+          "<tr><td>Reach 100 verified referrals</td><td>+" + money(c.milestone_100_cents) + "</td></tr>" +
+          "<tr><td>Finish #1 Ambassador</td><td>+" + money(c.top_bonus_cents) + "</td></tr>" +
+          "<tr><td><strong>Maximum potential</strong></td><td><strong>" + money(c.max_potential_cents) + "</strong></td></tr>";
+      }
+
+      function renderChips(list) {
+        var unis = [];
+        list.forEach(function (c) {
+          if (unis.indexOf(c.university) === -1) unis.push(c.university);
+        });
+        if (unis.length <= 1) {
+          chips.hidden = true;
+          chips.innerHTML = "";
+          return;
+        }
+        chips.hidden = false;
+        chips.innerHTML = "";
+        var all = document.createElement("button");
+        all.type = "button";
+        all.className = "campus-chip" + (!campusParam ? " active" : "");
+        all.textContent = "All campuses";
+        all.addEventListener("click", function () {
+          campusParam = "";
+          history.replaceState({}, "", location.pathname + location.hash);
+          fillSelect(list);
+        });
+        chips.appendChild(all);
+        unis.forEach(function (u) {
+          var b = document.createElement("button");
+          b.type = "button";
+          var active = campusParam && u.toLowerCase().indexOf(campusParam) !== -1;
+          b.className = "campus-chip" + (active ? " active" : "");
+          b.textContent = u;
+          b.addEventListener("click", function () {
+            campusParam = u.toLowerCase();
+            history.replaceState({}, "", "?campus=" + encodeURIComponent(u) + location.hash);
+            fillSelect(list);
+          });
+          chips.appendChild(b);
+        });
+      }
+
+      function fillSelect(list) {
+        var filtered = list;
+        if (campusParam) {
+          filtered = list.filter(function (c) {
+            return (c.university || "").toLowerCase().indexOf(campusParam) !== -1;
+          });
+          if (!filtered.length) filtered = list;
+        }
+        select.innerHTML = "";
+        filtered.forEach(function (c, i) {
+          var opt = document.createElement("option");
+          opt.value = c.id;
+          opt.textContent =
+            c.university + " — " + c.title + " (up to " + money(c.max_potential_cents) + ")";
+          if (i === 0) opt.selected = true;
+          select.appendChild(opt);
+        });
+        renderPay(selectedChallenge());
+        renderChips(list);
+      }
+
       function loadChallenges() {
         return rpc("list_recruiting_challenges", { p_type: "campus_ambassador" })
           .then(function (rows) {
-            var list = Array.isArray(rows) ? rows : [];
+            challenges = Array.isArray(rows) ? rows : [];
             select.innerHTML = "";
-            if (!list.length) {
+            if (!challenges.length) {
               select.innerHTML = '<option value="">No open challenges right now</option>';
               select.disabled = true;
               submitBtn.disabled = true;
+              banner.hidden = true;
+              chips.hidden = true;
               lead.textContent =
                 "Recruiting is paused. Check back soon, or email improvestu@gmail.com if your campus wants a challenge.";
+              payBody.innerHTML = "<tr><td colspan='2'>No open challenges.</td></tr>";
               return;
             }
             select.disabled = false;
             submitBtn.disabled = false;
-            list.forEach(function (c, i) {
-              var opt = document.createElement("option");
-              opt.value = c.id;
-              opt.textContent =
-                c.university +
-                " — " +
-                c.title +
-                " (up to " +
-                money(c.max_potential_cents) +
-                ")";
-              if (i === 0) opt.selected = true;
-              select.appendChild(opt);
+            var unis = [];
+            challenges.forEach(function (c) {
+              if (unis.indexOf(c.university) === -1) unis.push(c.university);
             });
+            banner.hidden = false;
+            banner.textContent =
+              unis.length === 1
+                ? "Now recruiting: " + unis[0]
+                : "Now recruiting: " + unis.join(" · ");
+            if (unis.length === 1) {
+              lead.textContent =
+                "Applying for " + unis[0] + ". This is not an acceptance.";
+            } else {
+              lead.textContent =
+                "Choose your campus challenge below. Applying is not acceptance.";
+            }
+            fillSelect(challenges);
           })
           .catch(function (err) {
             select.innerHTML = '<option value="">Could not load challenges</option>';
@@ -277,6 +406,10 @@
             );
           });
       }
+
+      select.addEventListener("change", function () {
+        renderPay(selectedChallenge());
+      });
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
