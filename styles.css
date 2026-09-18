@@ -1611,6 +1611,146 @@ img.founder-photo {
   }
 }
 
+/* Campus ambassadors apply */
+.ambassador-hero {
+  padding-top: 2.75rem;
+  padding-bottom: 2rem;
+}
+
+.ambassador-brand {
+  font-size: clamp(3.2rem, 12vw, 6.5rem);
+  margin-bottom: 0.15rem;
+}
+
+.ambassador-lede {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.45rem, 3.5vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.ambassador-steps {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.ambassador-steps li {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--accent-line, rgba(255, 255, 255, 0.12));
+}
+
+.ambassador-steps li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.ambassador-steps strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.ambassador-steps span {
+  color: var(--muted, rgba(255, 255, 255, 0.72));
+  line-height: 1.5;
+}
+
+.ambassador-form {
+  margin-top: 1.5rem;
+  max-width: 40rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.ambassador-form .field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.ambassador-form .field > span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ambassador-form .optional {
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.65;
+}
+
+.ambassador-form input,
+.ambassador-form select,
+.ambassador-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--accent-line, rgba(255, 255, 255, 0.18));
+  border-radius: 10px;
+  background: rgba(8, 10, 14, 0.55);
+  color: inherit;
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+}
+
+.ambassador-form textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+}
+
+.ambassador-form input:focus,
+.ambassador-form select:focus,
+.ambassador-form textarea:focus {
+  outline: 2px solid var(--faru, #5ec8ff);
+  outline-offset: 1px;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-note {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted, rgba(255, 255, 255, 0.72));
+  line-height: 1.45;
+}
+
+.ambassador-status {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--accent-line, rgba(255, 255, 255, 0.16));
+  background: rgba(8, 10, 14, 0.45);
+  line-height: 1.45;
+}
+
+.ambassador-status.ok {
+  border-color: rgba(110, 220, 140, 0.45);
+}
+
+.ambassador-status.err {
+  border-color: rgba(255, 120, 120, 0.5);
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
