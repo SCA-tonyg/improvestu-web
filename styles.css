@@ -1775,9 +1775,104 @@ img.founder-photo {
   margin-top: 0.2rem;
 }
 
+.ambassador-dash {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1.35rem;
+  max-width: 44rem;
+}
+
+.dash-hero {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+}
+
+.dash-code {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  border: 1px solid var(--accent-line, rgba(255, 255, 255, 0.16));
+  border-radius: 12px;
+  background: rgba(8, 10, 14, 0.45);
+}
+
+.dash-code strong {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  letter-spacing: 0.08em;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.dash-stat {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem;
+  border-radius: 12px;
+  border: 1px solid var(--accent-line, rgba(255, 255, 255, 0.12));
+}
+
+.dash-stat strong {
+  font-size: 1.35rem;
+  font-family: var(--font-display);
+}
+
+.progress-track {
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--faru, #5ec8ff);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.dash-earnings ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  line-height: 1.55;
+}
+
+.leaderboard {
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.leaderboard li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--accent-line, rgba(255, 255, 255, 0.1));
+}
+
+.leaderboard li.you {
+  border-color: var(--faru, #5ec8ff);
+}
+
 @media (max-width: 640px) {
   .field-grid {
     grid-template-columns: 1fr;
+  }
+
+  .dash-hero,
+  .dash-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

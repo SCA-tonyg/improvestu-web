@@ -170,6 +170,12 @@
               meta.innerHTML +=
                 "<p>Active code: <strong>" + res.referral_code + "</strong></p>";
             }
+            if (res && res.dashboard_url) {
+              meta.innerHTML +=
+                "<p><a class='btn btn-accent' href='" +
+                res.dashboard_url +
+                "'>Open challenge dashboard</a></p>";
+            }
           })
           .catch(function (err) {
             showStatus("err", (err && err.message) || "Could not activate.");

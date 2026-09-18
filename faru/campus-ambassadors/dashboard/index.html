@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FARU Campus Ambassador dashboard | Improvestu</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="Your FARU Campus Ambassador home base — referrals, milestones, earnings, and leaderboard." />
+  <link rel="canonical" href="https://www.improvestu.com/faru/campus-ambassadors/dashboard/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../styles.css" />
+</head>
+<body class="product-page theme-faru">
+  <div class="atmosphere atmosphere-faru" aria-hidden="true"></div>
+  <header class="top">
+    <a class="wordmark" href="/">Improvestu</a>
+    <nav>
+      <a href="/faru/">FARU</a>
+      <a href="/faru/campus-ambassadors/">Ambassadors</a>
+      <a href="/faru/campus-ambassadors/dashboard/" aria-current="page">Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="app-section">
+      <p class="eyebrow">Ambassador home</p>
+      <h1 class="section-title">Challenge dashboard</h1>
+      <p class="section-lead" id="lead">Loading your stats…</p>
+      <div id="status" class="ambassador-status" hidden></div>
+      <div id="dash" class="ambassador-dash" hidden>
+        <div class="dash-hero">
+          <div>
+            <p class="muted" id="challenge-uni"></p>
+            <h2 id="challenge-title"></h2>
+          </div>
+          <div class="dash-code">
+            <span class="muted">Your referral code</span>
+            <strong id="ref-code"></strong>
+            <div class="cta-row">
+              <button type="button" class="btn btn-ghost" id="copy-code">Copy</button>
+              <button type="button" class="btn btn-accent" id="share-code">Share</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-grid">
+          <div class="dash-stat">
+            <span class="muted">Verified referrals</span>
+            <strong id="credited">0</strong>
+          </div>
+          <div class="dash-stat">
+            <span class="muted">Rank</span>
+            <strong id="rank">—</strong>
+          </div>
+          <div class="dash-stat">
+            <span class="muted">Next milestone</span>
+            <strong id="next-ms">—</strong>
+          </div>
+          <div class="dash-stat">
+            <span class="muted">Challenge earned</span>
+            <strong id="earned">$0</strong>
+          </div>
+        </div>
+
+        <div class="dash-progress">
+          <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+          <p class="muted" id="progress-label">0 → 25</p>
+        </div>
+
+        <div class="dash-earnings">
+          <h3 class="section-title" style="font-size:1.15rem">Earnings</h3>
+          <ul id="earn-list"></ul>
+        </div>
+
+        <div class="dash-board">
+          <h3 class="section-title" style="font-size:1.15rem">Leaderboard</h3>
+          <ol id="leaderboard" class="leaderboard"></ol>
+        </div>
+
+        <p class="form-note">
+          Counts come from FARU verified referrals during the challenge window — same source as the app.
+          Open the FARU app Profile → Campus Ambassador for the in-app view.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="y"></span> Shot Calla Games, LLC · Improvestu</span>
+    <span class="foot-links">
+      <a class="muted" href="/faru/campus-ambassadors/">Apply</a>
+    </span>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    (function () {
+      var SUPABASE_URL = "https://nsaohitwxnojatitcsuj.supabase.co";
+      var SUPABASE_ANON_KEY = "sb_publishable_bute-IFcH7EIMwbkTkUQrw_9XMeg2e5";
+      var token = (new URLSearchParams(location.search).get("token") || "").trim();
+      var lead = document.getElementById("lead");
+      var statusEl = document.getElementById("status");
+      var dash = document.getElementById("dash");
+      var home = null;
+
+      function money(cents) {
+        return "$" + (Number(cents || 0) / 100).toFixed(0);
+      }
+      function showStatus(kind, text) {
+        statusEl.hidden = false;
+        statusEl.className = "ambassador-status " + (kind || "");
+        statusEl.textContent = text;
+      }
+      function rpc(name, body) {
+        return fetch(SUPABASE_URL + "/rest/v1/rpc/" + name, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: "Bearer " + SUPABASE_ANON_KEY,
+          },
+          body: JSON.stringify(body || {}),
+        }).then(function (res) {
+          return res.json().then(function (data) {
+            if (!res.ok) {
+              var msg = (data && (data.message || data.error || data.hint)) || "Request failed";
+              throw new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
+            }
+            return data;
+          });
+        });
+      }
+
+      if (!token) {
+        lead.textContent = "Open your personal dashboard link from onboarding or the FARU app.";
+        showStatus("err", "Missing dashboard token.");
+        return;
+      }
+
+      rpc("get_ambassador_home", { p_token: token })
+        .then(function (data) {
+          home = data;
+          var ch = data.challenge || {};
+          var st = data.stats || {};
+          var earn = data.earnings || {};
+          var credited = Number(st.credited_count || 0);
+          var next = earn.next_milestone;
+          var toNext = Number(earn.referrals_to_next || 0);
+
+          lead.textContent = "Live challenge stats for your FARU referral code.";
+          document.getElementById("challenge-uni").textContent = ch.university || "";
+          document.getElementById("challenge-title").textContent = ch.title || "Campus Ambassador Challenge";
+          document.getElementById("ref-code").textContent = data.referral_code || "—";
+          document.getElementById("credited").textContent = String(credited);
+          document.getElementById("rank").textContent = st.rank ? "#" + st.rank : "—";
+          document.getElementById("next-ms").textContent = next
+            ? next + " (" + toNext + " to go)"
+            : "All milestones unlocked";
+          document.getElementById("earned").textContent = money(earn.challenge_earned_cents);
+
+          var pct = 0;
+          if (!next) pct = 100;
+          else if (next === 25) pct = Math.min(100, (credited / 25) * 100);
+          else if (next === 50) pct = Math.min(100, (credited / 50) * 100);
+          else pct = Math.min(100, (credited / 100) * 100);
+          document.getElementById("progress-fill").style.width = pct + "%";
+          document.getElementById("progress-label").textContent =
+            credited + " verified · milestones 25 / 50 / 100";
+
+          var earnList = document.getElementById("earn-list");
+          earnList.innerHTML =
+            "<li>Base program recorded: <strong>" + money(earn.base_earned_cents) + "</strong></li>" +
+            "<li>Milestone bonuses: <strong>" + money(earn.milestone_earned_cents) + "</strong>" +
+            " (25/50/100)</li>" +
+            "<li>Top ambassador bonus: <strong>" + money(earn.top_bonus_earned_cents) + "</strong></li>" +
+            "<li>Paid: <strong>" + money(earn.paid_cents) + "</strong> · Outstanding: <strong>" +
+            money(earn.outstanding_cents) + "</strong></li>";
+
+          var lb = document.getElementById("leaderboard");
+          lb.innerHTML = "";
+          (data.leaderboard || []).forEach(function (row) {
+            var li = document.createElement("li");
+            if (row.is_you) li.className = "you";
+            li.innerHTML =
+              "<span>#" + row.rank + " " + (row.display_name || "Ambassador") +
+              (row.is_you ? " (you)" : "") +
+              "</span><span>" + row.credited_count + " verified</span>";
+            lb.appendChild(li);
+          });
+          if (!(data.leaderboard || []).length) {
+            lb.innerHTML = "<li class='muted'>No ambassadors on the board yet.</li>";
+          }
+          dash.hidden = false;
+        })
+        .catch(function (err) {
+          lead.textContent = "Could not load dashboard.";
+          showStatus("err", (err && err.message) || "Invalid link.");
+        });
+
+      document.getElementById("copy-code").addEventListener("click", function () {
+        var code = (home && home.referral_code) || "";
+        if (!code) return;
+        navigator.clipboard.writeText(code).then(function () {
+          showStatus("ok", "Copied " + code);
+        });
+      });
+      document.getElementById("share-code").addEventListener("click", function () {
+        var code = (home && home.referral_code) || "";
+        var url = (home && home.share_url) || "https://www.improvestu.com/faru/";
+        var text = "Join FARU with my campus ambassador code " + code + " — " + url;
+        if (navigator.share) {
+          navigator.share({ text: text }).catch(function () {});
+        } else {
+          navigator.clipboard.writeText(text);
+          showStatus("ok", "Share text copied.");
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
