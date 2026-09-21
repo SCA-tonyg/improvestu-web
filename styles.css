@@ -1096,6 +1096,50 @@ img.founder-photo {
   font-size: 0.88rem;
 }
 
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.social-row-compact {
+  margin-top: 0;
+  gap: 0.35rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--accent, var(--faru, #00e5ff)) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent, var(--faru, #00e5ff)) 28%, var(--line));
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.social-row-compact .social-icon {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+.social-icon:hover {
+  color: #041018;
+  background: var(--accent, var(--faru, #00e5ff));
+  border-color: var(--accent, var(--faru, #00e5ff));
+  transform: translateY(-1px);
+}
+
+.social-icon:focus-visible {
+  outline: 2px solid var(--accent, var(--faru, #00e5ff));
+  outline-offset: 3px;
+}
+
 .plan-compare {
   margin: 0 0 1.1rem;
   padding: 0.85rem 0.95rem;
