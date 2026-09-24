@@ -1,5 +1,8 @@
 User-agent: *
 Disallow: /fabu/
+Disallow: /faru/admin-panel/
+Disallow: /faru/campus-ambassadors/dashboard/
+Disallow: /faru/campus-ambassadors/onboarding/
 Allow: /faru/
 Allow: /
 Sitemap: https://www.improvestu.com/sitemap.xml
