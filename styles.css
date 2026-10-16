@@ -1655,41 +1655,6 @@ img.founder-photo {
   }
 }
 
-/* Promo QR soft landing — lives inside #apply so /#apply scans see FARU first */
-.apply-anchor {
-  scroll-margin-top: 4.5rem;
-}
-.promo-softland-in-apply {
-  margin: 0 0 1.75rem;
-  padding: 1.25rem 1.15rem 1.35rem;
-  border: 1px solid var(--accent-line, rgba(255, 255, 255, 0.14));
-  border-radius: 14px;
-  background:
-    linear-gradient(135deg, rgba(94, 200, 255, 0.14), transparent 55%),
-    rgba(8, 10, 14, 0.55);
-}
-.promo-softland-kicker {
-  margin: 0 0 0.35rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--faru, #5ec8ff);
-}
-.promo-softland-title {
-  margin: 0 0 0.45rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
-  letter-spacing: -0.02em;
-}
-.promo-softland-copy {
-  margin: 0 0 1rem;
-  max-width: 36rem;
-  color: var(--muted, rgba(255, 255, 255, 0.72));
-  line-height: 1.45;
-}
-
 /* Campus ambassadors apply */
 .ambassador-hero {
   padding-top: 2.75rem;

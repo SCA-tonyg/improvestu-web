@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FARU Campus Ambassadors — Apply | Improvestu</title>
+  <meta
+    name="description"
+    content="Apply to become a FARU Campus Ambassador. Help classmates find rides home, grow your campus network, and earn rewards in the founding challenge."
+  />
+  <link rel="canonical" href="https://www.improvestu.com/faru/campus-ambassadors/apply/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.improvestu.com/faru/campus-ambassadors/apply/" />
+  <meta property="og:title" content="FARU Campus Ambassadors" />
+  <meta
+    property="og:description"
+    content="Apply to represent FARU on your campus. Open challenges across recruiting universities — same referral code, multi-campus program."
+  />
+  <meta property="og:image" content="https://www.improvestu.com/assets/faru/og-share.jpg?v=20261010" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Improvestu" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FARU Campus Ambassadors" />
+  <meta
+    name="twitter:description"
+    content="Apply to represent FARU on your campus. Open challenges across recruiting universities."
+  />
+  <meta name="twitter:image" content="https://www.improvestu.com/assets/faru/og-share.jpg?v=20261010" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "FARU Campus Ambassadors",
+    "url": "https://www.improvestu.com/faru/campus-ambassadors/apply/",
+    "description": "Apply to become a FARU Campus Ambassador and earn rewards in the founding challenge.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Improvestu",
+      "url": "https://www.improvestu.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Improvestu", "item": "https://www.improvestu.com/"},
+      {"@type": "ListItem", "position": 2, "name": "FARU", "item": "https://www.improvestu.com/faru/"},
+      {"@type": "ListItem", "position": 3, "name": "Campus Ambassadors", "item": "https://www.improvestu.com/faru/campus-ambassadors/apply/"}
+    ]
+  }
+  </script>
+</head>
+<body class="product-page theme-faru">
+  <div class="atmosphere atmosphere-faru" aria-hidden="true"></div>
+  <header class="top">
+    <a class="wordmark" href="/">Improvestu</a>
+    <nav>
+      <a href="/faru/">FARU</a>
+      <a href="/faru/pricing/">Pricing</a>
+      <a href="/faru/about/">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="app-section ambassador-hero">
+      <p class="eyebrow">Campus program</p>
+      <h1 class="app-brand ambassador-brand">FARU</h1>
+      <p class="lede ambassador-lede">Campus Ambassadors</p>
+      <p class="section-lead">
+        Represent FARU on your campus. Share your referral code, help classmates get home, and compete in a timed
+        challenge — using the same FARU account you already have.
+      </p>
+      <p class="recruiting-banner" id="recruiting-banner" hidden></p>
+      <p class="cta-row">
+        <a class="btn btn-accent" href="#apply">Apply now</a>
+        <a class="btn btn-ghost" href="/faru/#download">Get the app</a>
+      </p>
+    </section>
+
+    <section class="app-section" id="pay">
+      <h2 class="section-title">How compensation works</h2>
+      <p class="section-lead" id="pay-lead">
+        Transparent pay for the selected challenge. Referral bonuses are cumulative after verified signup.
+      </p>
+      <div class="pay-table-wrap">
+        <table class="pay-table" id="pay-table">
+          <thead>
+            <tr><th>Achievement</th><th>Earnings</th></tr>
+          </thead>
+          <tbody id="pay-body">
+            <tr><td>Loading…</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="form-note" id="pay-note">
+        Milestone awards may be limited to the first ambassadors reaching each level.
+      </p>
+    </section>
+
+    <section class="app-section" id="how">
+      <h2 class="section-title">How it works</h2>
+      <ol class="ambassador-steps">
+        <li>
+          <strong>Apply</strong>
+          <span>Use your .edu email. Tell us how you’d get your first 25 students.</span>
+        </li>
+        <li>
+          <strong>Get accepted</strong>
+          <span>We review applications. Acceptance is not automatic — you’ll need a FARU account on that email.</span>
+        </li>
+        <li>
+          <strong>Share your code</strong>
+          <span>Your existing FARU referral code is your ambassador code. No second code.</span>
+        </li>
+        <li>
+          <strong>Earn in the challenge</strong>
+          <span>Rankings use credited referrals, then activity from students you brought in.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="app-section" id="apply">
+      <h2 class="section-title">Apply</h2>
+      <p class="section-lead" id="apply-lead">
+        Pick an open campus challenge and submit. Applying is not acceptance.
+      </p>
+
+      <div id="campus-chips" class="campus-chips" hidden></div>
+
+      <div id="apply-status" class="ambassador-status" hidden></div>
+
+      <form id="ambassador-form" class="ambassador-form" novalidate>
+        <label class="field">
+          <span>Campus challenge</span>
+          <select name="challenge_id" id="challenge_id" required>
+            <option value="">Loading challenges…</option>
+          </select>
+        </label>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Full name</span>
+            <input name="full_name" type="text" autocomplete="name" required maxlength="120" />
+          </label>
+          <label class="field">
+            <span>University email</span>
+            <input name="university_email" type="email" autocomplete="email" required maxlength="160" placeholder="you@school.edu" />
+          </label>
+        </div>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Phone <em class="optional">(optional)</em></span>
+            <input name="phone" type="tel" autocomplete="tel" maxlength="40" />
+          </label>
+          <label class="field">
+            <span>Class year <em class="optional">(optional)</em></span>
+            <input name="class_year" type="text" maxlength="40" placeholder="2027" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Major <em class="optional">(optional)</em></span>
+          <input name="major" type="text" maxlength="120" />
+        </label>
+
+        <label class="field">
+          <span>Campus organizations <em class="optional">(optional)</em></span>
+          <input name="campus_organizations" type="text" maxlength="300" placeholder="SGA, club sports, orgs…" />
+        </label>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Greek life <em class="optional">(optional)</em></span>
+            <input name="greek_life" type="text" maxlength="120" />
+          </label>
+          <label class="field">
+            <span>Housing <em class="optional">(optional)</em></span>
+            <input name="housing" type="text" maxlength="120" placeholder="Residence hall, off-campus…" />
+          </label>
+        </div>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Social handles <em class="optional">(optional)</em></span>
+            <input name="social_handles" type="text" maxlength="200" placeholder="@instagram · TikTok…" />
+          </label>
+          <label class="field">
+            <span>Estimated reach <em class="optional">(optional)</em></span>
+            <input name="estimated_social_reach" type="text" maxlength="80" placeholder="e.g. 2k followers" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Campus involvement <em class="optional">(optional)</em></span>
+          <textarea name="campus_involvement" rows="3" maxlength="800"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Why do you want to represent FARU?</span>
+          <textarea name="why_represent" rows="4" required maxlength="1200"></textarea>
+        </label>
+
+        <label class="field">
+          <span>How would you get your first 25 students?</span>
+          <textarea name="first_25_plan" rows="4" required maxlength="1200"></textarea>
+        </label>
+
+        <p class="form-note">
+          Use the same .edu email as your FARU account so we can link your profile and referral code if you’re accepted.
+        </p>
+
+        <button class="btn btn-accent" type="submit" id="apply-submit">Submit application</button>
+      </form>
+    </section>
+
+    <section class="app-section page-prose">
+      <h2 class="section-title">Download FARU first</h2>
+      <p>
+        Accepted ambassadors need a FARU account. If you don’t have one yet, download the app, verify your school email,
+        then apply with that same address.
+      </p>
+      <p>
+        <a class="btn" href="/faru/#download">Download FARU</a>
+        <a class="btn btn-ghost" href="/faru/">Back to FARU</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="y"></span> Shot Calla Games, LLC · Improvestu</span>
+    <span class="foot-links">
+      <a class="donate-btn" href="https://www.paypal.com/donate/?hosted_button_id=JY5M8MC5D2H92" target="_blank" rel="noopener noreferrer">Donate</a>
+      ·
+      <a class="muted" href="/faru/campus-ambassadors/apply/" aria-current="page">Ambassadors</a>
+      ·
+      <a class="muted" href="/faru/">FARU home</a>
+    </span>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    (function () {
+      var SUPABASE_URL = "https://nsaohitwxnojatitcsuj.supabase.co";
+      var SUPABASE_ANON_KEY = "sb_publishable_bute-IFcH7EIMwbkTkUQrw_9XMeg2e5";
+      var form = document.getElementById("ambassador-form");
+      var select = document.getElementById("challenge_id");
+      var statusEl = document.getElementById("apply-status");
+      var submitBtn = document.getElementById("apply-submit");
+      var lead = document.getElementById("apply-lead");
+      var banner = document.getElementById("recruiting-banner");
+      var chips = document.getElementById("campus-chips");
+      var payBody = document.getElementById("pay-body");
+      var payLead = document.getElementById("pay-lead");
+      var payNote = document.getElementById("pay-note");
+      var challenges = [];
+      var campusParam = (new URLSearchParams(location.search).get("campus") || "").trim().toLowerCase();
+
+      function money(cents) {
+        return "$" + (Number(cents || 0) / 100).toFixed(0);
+      }
+
+      function showStatus(kind, text) {
+        statusEl.hidden = false;
+        statusEl.className = "ambassador-status " + (kind || "");
+        statusEl.textContent = text;
+      }
+
+      function rpc(name, body) {
+        return fetch(SUPABASE_URL + "/rest/v1/rpc/" + name, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: "Bearer " + SUPABASE_ANON_KEY,
+            Prefer: "return=representation",
+          },
+          body: JSON.stringify(body || {}),
+        }).then(function (res) {
+          return res.json().then(function (data) {
+            if (!res.ok) {
+              var msg =
+                (data && (data.message || data.error || data.hint)) ||
+                "Request failed (" + res.status + ")";
+              throw new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
+            }
+            return data;
+          });
+        });
+      }
+
+      function selectedChallenge() {
+        var id = select.value;
+        for (var i = 0; i < challenges.length; i++) {
+          if (challenges[i].id === id) return challenges[i];
+        }
+        return challenges[0] || null;
+      }
+
+      function renderPay(c) {
+        if (!c) {
+          payBody.innerHTML = "<tr><td colspan='2'>No open challenge selected.</td></tr>";
+          return;
+        }
+        var base = Number(c.base_pay_cents || 15000);
+        var seg = Math.round(base / 3);
+        payLead.textContent =
+          "Pay for " + c.university + " — " + c.title + ". Referral bonuses are cumulative after verified signup.";
+        payNote.textContent =
+          "Milestone awards limited to the first " +
+          (c.milestone_cap_per_level || 10) +
+          " ambassadors reaching each level. Max potential " +
+          money(c.max_potential_cents) +
+          ".";
+        payBody.innerHTML =
+          "<tr><td>Complete Days 1–30 responsibilities</td><td>" + money(seg) + "</td></tr>" +
+          "<tr><td>Complete Days 31–60 responsibilities</td><td>+" + money(seg) + "</td></tr>" +
+          "<tr><td>Complete Days 61–90 responsibilities</td><td>+" + money(seg) + "</td></tr>" +
+          "<tr><td>Reach 25 verified referrals</td><td>+" + money(c.milestone_25_cents) + "</td></tr>" +
+          "<tr><td>Reach 50 verified referrals</td><td>+" + money(c.milestone_50_cents) + "</td></tr>" +
+          "<tr><td>Reach 100 verified referrals</td><td>+" + money(c.milestone_100_cents) + "</td></tr>" +
+          "<tr><td>Finish #1 Ambassador</td><td>+" + money(c.top_bonus_cents) + "</td></tr>" +
+          "<tr><td><strong>Maximum potential</strong></td><td><strong>" + money(c.max_potential_cents) + "</strong></td></tr>";
+      }
+
+      function renderChips(list) {
+        var unis = [];
+        list.forEach(function (c) {
+          if (unis.indexOf(c.university) === -1) unis.push(c.university);
+        });
+        if (unis.length <= 1) {
+          chips.hidden = true;
+          chips.innerHTML = "";
+          return;
+        }
+        chips.hidden = false;
+        chips.innerHTML = "";
+        var all = document.createElement("button");
+        all.type = "button";
+        all.className = "campus-chip" + (!campusParam ? " active" : "");
+        all.textContent = "All campuses";
+        all.addEventListener("click", function () {
+          campusParam = "";
+          history.replaceState({}, "", location.pathname + location.hash);
+          fillSelect(list);
+        });
+        chips.appendChild(all);
+        unis.forEach(function (u) {
+          var b = document.createElement("button");
+          b.type = "button";
+          var active = campusParam && u.toLowerCase().indexOf(campusParam) !== -1;
+          b.className = "campus-chip" + (active ? " active" : "");
+          b.textContent = u;
+          b.addEventListener("click", function () {
+            campusParam = u.toLowerCase();
+            history.replaceState({}, "", "?campus=" + encodeURIComponent(u) + location.hash);
+            fillSelect(list);
+          });
+          chips.appendChild(b);
+        });
+      }
+
+      function fillSelect(list) {
+        var filtered = list;
+        if (campusParam) {
+          filtered = list.filter(function (c) {
+            return (c.university || "").toLowerCase().indexOf(campusParam) !== -1;
+          });
+          if (!filtered.length) filtered = list;
+        }
+        select.innerHTML = "";
+        filtered.forEach(function (c, i) {
+          var opt = document.createElement("option");
+          opt.value = c.id;
+          opt.textContent =
+            c.university + " — " + c.title + " (up to " + money(c.max_potential_cents) + ")";
+          if (i === 0) opt.selected = true;
+          select.appendChild(opt);
+        });
+        renderPay(selectedChallenge());
+        renderChips(list);
+      }
+
+      function loadChallenges() {
+        return rpc("list_recruiting_challenges", { p_type: "campus_ambassador" })
+          .then(function (rows) {
+            challenges = Array.isArray(rows) ? rows : [];
+            select.innerHTML = "";
+            if (!challenges.length) {
+              select.innerHTML = '<option value="">No open challenges right now</option>';
+              select.disabled = true;
+              submitBtn.disabled = true;
+              banner.hidden = true;
+              chips.hidden = true;
+              lead.textContent =
+                "Recruiting is paused. Check back soon, or email improvestu@gmail.com if your campus wants a challenge.";
+              payBody.innerHTML = "<tr><td colspan='2'>No open challenges.</td></tr>";
+              return;
+            }
+            select.disabled = false;
+            submitBtn.disabled = false;
+            var unis = [];
+            challenges.forEach(function (c) {
+              if (unis.indexOf(c.university) === -1) unis.push(c.university);
+            });
+            banner.hidden = false;
+            banner.textContent =
+              unis.length === 1
+                ? "Now recruiting: " + unis[0]
+                : "Now recruiting: " + unis.join(" · ");
+            if (unis.length === 1) {
+              lead.textContent =
+                "Applying for " + unis[0] + ". This is not an acceptance.";
+            } else {
+              lead.textContent =
+                "Choose your campus challenge below. Applying is not acceptance.";
+            }
+            fillSelect(challenges);
+          })
+          .catch(function (err) {
+            select.innerHTML = '<option value="">Could not load challenges</option>';
+            select.disabled = true;
+            submitBtn.disabled = true;
+            showStatus(
+              "err",
+              (err && err.message) ||
+                "Could not load challenges. The program database may not be live yet."
+            );
+          });
+      }
+
+      select.addEventListener("change", function () {
+        renderPay(selectedChallenge());
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var fd = new FormData(form);
+        var challengeId = String(fd.get("challenge_id") || "").trim();
+        if (!challengeId) {
+          showStatus("err", "Pick a challenge.");
+          return;
+        }
+        submitBtn.disabled = true;
+        showStatus("", "Sending…");
+        rpc("submit_ambassador_application", {
+          p_challenge_id: challengeId,
+          p_full_name: String(fd.get("full_name") || ""),
+          p_university_email: String(fd.get("university_email") || ""),
+          p_phone: String(fd.get("phone") || "") || null,
+          p_class_year: String(fd.get("class_year") || "") || null,
+          p_major: String(fd.get("major") || "") || null,
+          p_campus_organizations: String(fd.get("campus_organizations") || "") || null,
+          p_greek_life: String(fd.get("greek_life") || "") || null,
+          p_housing: String(fd.get("housing") || "") || null,
+          p_social_handles: String(fd.get("social_handles") || "") || null,
+          p_estimated_social_reach: String(fd.get("estimated_social_reach") || "") || null,
+          p_campus_involvement: String(fd.get("campus_involvement") || "") || null,
+          p_why_represent: String(fd.get("why_represent") || ""),
+          p_first_25_plan: String(fd.get("first_25_plan") || ""),
+          p_club_id: null,
+        })
+          .then(function (res) {
+            var msg =
+              (res && res.message) ||
+              "Application received. This is not an acceptance.";
+            showStatus("ok", msg);
+            form.reset();
+            var appId = res && res.application_id;
+            if (appId) {
+              fetch(SUPABASE_URL + "/functions/v1/sendAmbassadorEmail", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  apikey: SUPABASE_ANON_KEY,
+                  Authorization: "Bearer " + SUPABASE_ANON_KEY,
+                },
+                body: JSON.stringify({
+                  kind: "application_received",
+                  application_id: appId,
+                }),
+              }).catch(function () {});
+            }
+            return loadChallenges();
+          })
+          .catch(function (err) {
+            showStatus("err", (err && err.message) || "Could not submit. Try again.");
+            submitBtn.disabled = false;
+          });
+      });
+
+      loadChallenges();
+    })();
+  </script>
+</body>
+</html>
