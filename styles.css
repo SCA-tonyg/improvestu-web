@@ -1655,6 +1655,39 @@ img.founder-photo {
   }
 }
 
+/* Promo QR soft landing (ambassadors URL on printed materials) */
+.promo-softland {
+  border-bottom: 1px solid var(--accent-line, rgba(255, 255, 255, 0.12));
+  background:
+    linear-gradient(180deg, rgba(94, 200, 255, 0.12), transparent 70%),
+    rgba(8, 10, 14, 0.55);
+}
+.promo-softland-inner {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.promo-softland-kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faru, #5ec8ff);
+}
+.promo-softland-title {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+  letter-spacing: -0.02em;
+}
+.promo-softland-copy {
+  margin: 0 0 1rem;
+  max-width: 36rem;
+  color: var(--muted, rgba(255, 255, 255, 0.72));
+  line-height: 1.45;
+}
+
 /* Campus ambassadors apply */
 .ambassador-hero {
   padding-top: 2.75rem;
