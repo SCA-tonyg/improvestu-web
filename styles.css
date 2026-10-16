@@ -1655,16 +1655,18 @@ img.founder-photo {
   }
 }
 
-/* Promo QR soft landing (ambassadors URL on printed materials) */
-.promo-softland {
-  border-bottom: 1px solid var(--accent-line, rgba(255, 255, 255, 0.12));
-  background:
-    linear-gradient(180deg, rgba(94, 200, 255, 0.12), transparent 70%),
-    rgba(8, 10, 14, 0.55);
+/* Promo QR soft landing — lives inside #apply so /#apply scans see FARU first */
+.apply-anchor {
+  scroll-margin-top: 4.5rem;
 }
-.promo-softland-inner {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+.promo-softland-in-apply {
+  margin: 0 0 1.75rem;
+  padding: 1.25rem 1.15rem 1.35rem;
+  border: 1px solid var(--accent-line, rgba(255, 255, 255, 0.14));
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(94, 200, 255, 0.14), transparent 55%),
+    rgba(8, 10, 14, 0.55);
 }
 .promo-softland-kicker {
   margin: 0 0 0.35rem;
