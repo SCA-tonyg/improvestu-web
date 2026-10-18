@@ -6,7 +6,7 @@
   <title>FARU — Campus Carpool App for College Students | Improvestu</title>
   <meta
     name="description"
-    content="Campus carpool for verified classmates: chat first, meet on campus, ride home for break. Free core; FARU+ adds Class Rides."
+    content="Campus carpool for verified classmates: chat first, meet on campus, ride home for break. Free core; FARU+ for students; FARU Groups and Groups Pro for clubs."
   />
   <link rel="canonical" href="https://www.improvestu.com/faru/" />
   <meta property="og:type" content="website" />
@@ -14,7 +14,7 @@
   <meta property="og:title" content="FARU — Campus Carpool App for College Students" />
   <meta
     property="og:description"
-    content="Find a ride with classmates who share your schedule. Chat first, meet on campus, ride together. Free tier + FARU+."
+    content="Find a ride with classmates who share your schedule. Free for verified students; FARU+ for students; FARU Groups and Groups Pro for clubs."
   />
   <meta property="og:image" content="https://www.improvestu.com/assets/faru/og-share.jpg?v=20261010" />
   <meta property="og:image:secure_url" content="https://www.improvestu.com/assets/faru/og-share.jpg?v=20261010" />
@@ -104,6 +104,24 @@
         "availability": "https://schema.org/InStock",
         "url": "https://www.improvestu.com/faru/pricing/",
         "description": "Annual membership — save about 17% vs paying monthly."
+      },
+      {
+        "@type": "Offer",
+        "name": "FARU Groups",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.improvestu.com/faru/pricing/#groups",
+        "description": "Club-billed monthly plan for event ride hubs and club ride series."
+      },
+      {
+        "@type": "Offer",
+        "name": "FARU Groups Pro",
+        "price": "24.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.improvestu.com/faru/pricing/#groups",
+        "description": "Club-billed monthly plan for officer tools, reminders, and chapter ops."
       }
     ],
     "additionalType": "https://schema.org/SoftwareApplication"
@@ -165,7 +183,7 @@
         "name": "Do I need FARU+ to use the app?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Verified students can browse campus rides, post a limited number of open rides, request seats, post Ride Requests, chat, and use core safety tools for free. FARU+ unlocks wider browse, Quick Rides, Class Rides, corridor alerts, For you, and an ad-free experience."
+          "text": "No. Verified students can browse campus rides, post a limited number of open rides, request seats, post Ride Requests, chat, and use core safety tools for free. FARU+ unlocks wider browse, Quick Rides, Class Rides, After class, corridor alerts, For you, and an ad-free experience."
         }
       },
       {
@@ -174,6 +192,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Start a 30-day free trial from Membership in the app, then $4.99/month or $49.99/year through Apple or Google. Cancel in your store subscriptions before the trial ends to avoid charges. Annual saves about 17% vs paying monthly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are FARU Groups and Groups Pro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FARU Groups ($9.99/mo) and Groups Pro ($24.99/mo) bill the club, not the student, through Apple or Google. Groups opens event ride hubs and club ride series. Pro adds officer roles, reminders, a dashboard, and chapter ops. Members still post seats, request rides, and ask for DD help for free. A student can hold FARU+ and a club can hold Groups at the same time."
         }
       },
       {
@@ -613,8 +639,8 @@
     <section id="plans" class="app-section">
       <h2 class="section-title">What’s free vs FARU+</h2>
       <p class="section-copy">
-        Core campus rides and safety stay free. FARU+ adds wider browse, smarter matching, Class Rides, After class, and an ad-free experience.
-        Unlike per-ride campus apps that charge base + per-mile fees, FARU is a membership — you don’t pay a cut of every seat.
+        Core campus rides and safety stay free. FARU+ is a student membership. Clubs can add FARU Groups or Groups Pro separately — members still ride for free.
+        Unlike per-ride campus apps that charge base + per-mile fees, FARU doesn’t take a cut of every seat.
       </p>
       <div class="plan-split">
         <div class="plan-col">
@@ -633,6 +659,8 @@
             <li>Designated Driver opt-in; join club DD networks with codes</li>
             <li>Enter your class schedule and Feed the App building votes</li>
             <li>View your campus official event calendar when the school enables it</li>
+            <li>Browse Events lists and post an event ride</li>
+            <li>Join a club — post seats and ask for DD help for free</li>
           </ul>
         </div>
         <div class="plan-col plan-col-plus plan-col-featured" aria-current="true">
@@ -663,7 +691,7 @@
             <li>Similar-trip completion hints before you request</li>
             <li>Class Rides marketplace (seeks/offers, Home Pickup, match notifies, pickup-before-class buffer)</li>
             <li>After class — rides after your last class; All or My places, with optional alerts</li>
-            <li>Browse and post campus event rides</li>
+            <li>Events Near campus / For you ranking</li>
             <li>Class Rides live share to emergency contacts</li>
             <li>Start a club / group Designated Driver network</li>
             <li>Ad-free experience</li>
@@ -676,6 +704,46 @@
       <p class="section-copy plan-more-link">
         Full pricing detail:
         <a href="/faru/pricing/">FARU pricing page</a>
+      </p>
+    </section>
+
+    <section id="groups" class="app-section">
+      <p class="eyebrow">For clubs</p>
+      <h2 class="section-title">FARU Groups vs Groups Pro</h2>
+      <p class="section-copy">
+        Billed to the club on the Play / App Store — not to each student. Members still post seats, request rides, and ask for DD help for free. A club can hold Groups while a student keeps FARU+.
+      </p>
+      <div class="plan-split">
+        <div class="plan-col">
+          <p class="plan-eyebrow">Club plan</p>
+          <h3 class="plan-name">FARU Groups</h3>
+          <p class="plan-price">$9.99/mo · billed to the club</p>
+          <ul class="plan-list">
+            <li>Event ride hubs with arrive and leave windows</li>
+            <li>QR page so members can offer seats or need a ride</li>
+            <li>Club ride series (club-owned weekly posts)</li>
+            <li>Members still ride and ask for DD help for free</li>
+          </ul>
+        </div>
+        <div class="plan-col plan-col-plus">
+          <p class="plan-eyebrow">Club plan</p>
+          <h3 class="plan-name">Groups Pro</h3>
+          <p class="plan-price">$24.99/mo · billed to the club</p>
+          <p class="plan-anchor">Everything in Groups, plus officer tools.</p>
+          <ul class="plan-list">
+            <li>Officer roles: president, event chair, ride chair, advisor</li>
+            <li>Officer dashboard, hub roster, and chapter report</li>
+            <li>24h / 2h reminders, leave-window pings, unfilled-seat alerts</li>
+            <li>Templates, joint hubs, pin, waitlist, arrive/leave waves</li>
+            <li>Driver week, area pings, duty, check-in, club-private notes</li>
+            <li>Multiple group DD networks and DD duty nights</li>
+            <li>Council seat roll-up for multi-club orgs</li>
+          </ul>
+        </div>
+      </div>
+      <p class="section-copy plan-more-link">
+        Start from Club → Groups in the app.
+        <a href="/faru/pricing/#groups">See the full club breakdown</a>
       </p>
     </section>
 
@@ -746,6 +814,15 @@
           <p>
             Start a 30-day free trial from Membership in the app, then $4.99/month or $49.99/year through Apple or Google.
             Annual saves about 17% vs paying monthly. Cancel in your store subscriptions before the trial ends to avoid charges.
+          </p>
+        </details>
+        <details>
+          <summary>What are FARU Groups and Groups Pro?</summary>
+          <p>
+            They bill the club, not the student. Groups ($9.99/mo) opens event ride hubs and club ride series.
+            Groups Pro ($24.99/mo) adds officer roles, reminders, a dashboard, and chapter ops.
+            Members still post seats, request rides, and ask for DD help for free. Start from Club → Groups.
+            A student can hold FARU+ and a club can hold Groups at the same time.
           </p>
         </details>
         <details>

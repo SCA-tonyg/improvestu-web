@@ -9,8 +9,10 @@
 - Contact: improvestu@gmail.com
 
 ## Pricing
-- Free: campus browse, up to 5 open ride posts, Ride Requests, chat, SOS/emergency contacts/check-ins, report/block
-- FARU+: 30-day free trial, then $4.99/mo or $49.99/yr — wider campus browse, unlimited posts, Quick Rides, Class Rides, After class, corridor alerts, For you, event rides, ad-free
+- Free: campus browse, up to 5 open ride posts, Ride Requests, chat, SOS/emergency contacts/check-ins, report/block, Events lists and post event ride, join clubs
+- FARU+: 30-day free trial, then $4.99/mo or $49.99/yr — wider campus browse, unlimited posts, Quick Rides, Class Rides, After class, corridor alerts, For you, Events Near campus / For you, ad-free
+- FARU Groups: $9.99/mo billed to the club — event ride hubs, club ride series; members still ride and ask for DD help for free
+- FARU Groups Pro: $24.99/mo billed to the club — Groups plus officer roles, dashboard, reminders, templates, waitlist, duty, chapter report, multi DD, council
 
 ## Downloads
 - Google Play: https://play.google.com/store/apps/details?id=com.faru.faru
