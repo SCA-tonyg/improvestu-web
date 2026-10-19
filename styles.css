@@ -2133,3 +2133,79 @@ img.founder-photo {
     max-width: 22rem;
   }
 }
+
+.how-callout {
+  max-width: 1120px;
+  margin: 0 auto 0.5rem;
+  padding: 1rem 1.35rem;
+  border: 1px solid color-mix(in srgb, var(--accent, var(--faru)) 45%, var(--line));
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--accent, var(--faru)) 10%, transparent);
+}
+
+.how-callout p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.how-roles a.scenario-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.how-roles a.scenario-card:hover {
+  border-color: rgba(0, 229, 255, 0.45);
+}
+
+.how-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+  margin-top: 1.25rem;
+}
+
+.how-do,
+.how-dont {
+  margin: 0;
+  padding: 1.15rem 1.2rem 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(14, 16, 24, 0.65);
+}
+
+.how-dont {
+  border-color: color-mix(in srgb, #ff8a8a 42%, var(--line));
+}
+
+.how-do h3,
+.how-dont h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.how-do ul,
+.how-dont ul,
+.how-callout + p {
+  margin: 0;
+}
+
+.how-do li,
+.how-dont li {
+  color: var(--muted);
+  margin: 0.35rem 0 0;
+}
+
+.how-table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+@media (max-width: 720px) {
+  .how-split {
+    grid-template-columns: 1fr;
+  }
+}
