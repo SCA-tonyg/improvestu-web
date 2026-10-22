@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FARU door check-in</title>
-  <meta name="description" content="Open FARU to show your door check-in code for this event." />
+  <meta name="description" content="Open FARU to check in for this event." />
   <meta name="robots" content="noindex" />
   <link rel="canonical" href="https://www.improvestu.com/faru/attend/" />
   <style>
@@ -59,7 +59,7 @@
 </head>
 <body>
   <main>
-    <h1>Door check-in</h1>
+    <h1>Event check-in</h1>
     <p id="msg">Loading…</p>
     <div id="actions" hidden></div>
   </main>
@@ -84,46 +84,46 @@
 
       var ua = navigator.userAgent || '';
       var isAndroid = /Android/i.test(ua);
-      var isIOS = /iPhone|iPad|iPod/i.test(ua);
       var deep = 'faru://attend/' + encodeURIComponent(hub);
-      // Chrome/Android block bare custom-scheme redirects from HTTPS; Intent URLs work.
       var play = 'https://play.google.com/store/apps/details?id=com.faru.faru';
       var site = 'https://www.improvestu.com/faru/';
+      // Explicit VIEW + BROWSABLE so Chrome delivers faru://attend/<hub> (same
+      // route as Club Member check-in), not a bare package launch to Home.
       var intent =
         'intent://attend/' + encodeURIComponent(hub) +
-        '#Intent;scheme=faru;package=com.faru.faru;S.browser_fallback_url=' +
-        encodeURIComponent(play) + ';end';
+        '#Intent;scheme=faru;package=com.faru.faru;' +
+        'action=android.intent.action.VIEW;' +
+        'category=android.intent.category.BROWSABLE;' +
+        'S.browser_fallback_url=' + encodeURIComponent(play) + ';end';
 
       function openFaru() {
         if (isAndroid) {
           window.location.href = intent;
           return;
         }
-        // iOS / desktop: custom scheme on a user gesture.
         var start = Date.now();
         window.location.href = deep;
         setTimeout(function () {
-          // If still here after ~1.5s, app likely not installed.
           if (Date.now() - start < 2000 && document.visibilityState === 'visible') {
             window.location.href = site;
           }
         }, 1600);
       }
 
-      msg.textContent = 'Tap below to show your door code in FARU. You need the FARU app signed in on this phone.';
+      msg.textContent = 'Opening FARU event check-in… You need the FARU app signed in on this phone.';
       actions.hidden = false;
       actions.innerHTML =
-        '<button type="button" class="btn" id="openBtn">Open in FARU</button>' +
+        '<button type="button" class="btn" id="openBtn">Open event check-in</button>' +
         '<div><a class="secondary" href="' + (isAndroid ? play : site) + '">Get FARU</a></div>';
       document.getElementById('openBtn').addEventListener('click', function (e) {
         e.preventDefault();
         openFaru();
       });
 
-      // Auto-try once on Android (Intent is allowed); skip auto on iOS Safari
-      // because custom-scheme navigation without a tap is often blocked.
       if (isAndroid) {
-        setTimeout(openFaru, 250);
+        setTimeout(openFaru, 200);
+      } else {
+        setTimeout(openFaru, 400);
       }
     })();
   </script>
