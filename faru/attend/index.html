@@ -36,20 +36,23 @@
     }
     h1 { font-size: 1.35rem; margin: 0 0 8px; }
     p { color: var(--muted); line-height: 1.45; margin: 0 0 16px; }
-    a.btn {
+    button.btn, a.btn {
       display: inline-block;
       background: var(--cyan);
       color: #041018;
       font-weight: 700;
       text-decoration: none;
-      padding: 12px 18px;
+      border: 0;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 14px 20px;
       border-radius: 999px;
       margin: 6px 4px;
     }
     a.secondary {
       color: var(--cyan);
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 14px;
     }
     .err { color: #ff8f8f; }
   </style>
@@ -57,8 +60,8 @@
 <body>
   <main>
     <h1>Door check-in</h1>
-    <p id="msg">Opening FARU…</p>
-    <p id="actions" hidden></p>
+    <p id="msg">Loading…</p>
+    <div id="actions" hidden></div>
   </main>
   <script>
     (function () {
@@ -78,15 +81,50 @@
         msg.textContent = 'This door link is missing the event. Ask an officer for the hub QR again.';
         return;
       }
+
+      var ua = navigator.userAgent || '';
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
       var deep = 'faru://attend/' + encodeURIComponent(hub);
-      var store = 'https://www.improvestu.com/faru/';
-      msg.textContent = 'If FARU is installed, your door code screen should open. If nothing happens, tap Open in FARU.';
+      // Chrome/Android block bare custom-scheme redirects from HTTPS; Intent URLs work.
+      var play = 'https://play.google.com/store/apps/details?id=com.faru.faru';
+      var site = 'https://www.improvestu.com/faru/';
+      var intent =
+        'intent://attend/' + encodeURIComponent(hub) +
+        '#Intent;scheme=faru;package=com.faru.faru;S.browser_fallback_url=' +
+        encodeURIComponent(play) + ';end';
+
+      function openFaru() {
+        if (isAndroid) {
+          window.location.href = intent;
+          return;
+        }
+        // iOS / desktop: custom scheme on a user gesture.
+        var start = Date.now();
+        window.location.href = deep;
+        setTimeout(function () {
+          // If still here after ~1.5s, app likely not installed.
+          if (Date.now() - start < 2000 && document.visibilityState === 'visible') {
+            window.location.href = site;
+          }
+        }, 1600);
+      }
+
+      msg.textContent = 'Tap below to show your door code in FARU. You need the FARU app signed in on this phone.';
       actions.hidden = false;
       actions.innerHTML =
-        '<a class="btn" href="' + deep + '">Open in FARU</a>' +
-        '<div><a class="secondary" href="' + store + '">Get FARU</a></div>';
-      // Try to hand off to the app immediately (works when FARU is installed).
-      window.location.replace(deep);
+        '<button type="button" class="btn" id="openBtn">Open in FARU</button>' +
+        '<div><a class="secondary" href="' + (isAndroid ? play : site) + '">Get FARU</a></div>';
+      document.getElementById('openBtn').addEventListener('click', function (e) {
+        e.preventDefault();
+        openFaru();
+      });
+
+      // Auto-try once on Android (Intent is allowed); skip auto on iOS Safari
+      // because custom-scheme navigation without a tap is often blocked.
+      if (isAndroid) {
+        setTimeout(openFaru, 250);
+      }
     })();
   </script>
 </body>
