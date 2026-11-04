@@ -6,6 +6,7 @@
   --line: #1c2230;
   --faru: #00e5ff;
   --fabu: #a6dc2e;
+  --fasu: #3ddc97;
   --warm: #e8ffb0;
   --font-display: "Syne", system-ui, sans-serif;
   --font-body: "Figtree", system-ui, sans-serif;
@@ -572,6 +573,10 @@ a:hover {
   color: var(--faru);
 }
 
+.legal-fasu .legal-doc h1 {
+  color: var(--fasu);
+}
+
 .legal-doc h2 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -594,6 +599,10 @@ a:hover {
 
 .legal-faru .legal-doc a {
   color: var(--faru);
+}
+
+.legal-fasu .legal-doc a {
+  color: var(--fasu);
 }
 
 .legal-doc ol {
