@@ -2,7 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.improvestu.com/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-11-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.improvestu.com/fasu/</loc>
+    <lastmod>2026-11-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.improvestu.com/fasu/privacy/</loc>
+    <lastmod>2026-11-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.improvestu.com/fasu/terms/</loc>
+    <lastmod>2026-11-07</lastmod>
   </url>
   <url>
     <loc>https://www.improvestu.com/faru/</loc>

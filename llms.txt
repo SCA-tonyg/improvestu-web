@@ -1,25 +1,23 @@
-# Improvestu / FARU
+# Improvestu
 
-> FARU (Find A Ride University) is a campus carpool message board for verified college students. Chat first, meet on campus, ride with classmates. Not a taxi or rideshare dispatch service.
+> Improvestu is the Shot Call'a Games, LLC initiative behind FARU (campus carpool) and FASU (study buddy) for verified college students.
 
-## Product
-- Name: FARU
-- URL: https://www.improvestu.com/faru/
-- Company: Shot Call'a Games, LLC (Improvestu initiative)
+## Company
+- URL: https://www.improvestu.com/
 - Contact: improvestu@gmail.com
 
-## Pricing
-- Free: campus browse, up to 5 open ride posts, Ride Requests, chat, SOS/emergency contacts/check-ins, report/block, Events lists and post event ride, join clubs
-- FARU+: 30-day free trial, then $4.99/mo or $49.99/yr — wider campus browse, unlimited posts, Quick Rides, Class Rides, After class, corridor alerts, For you, Events Near campus / For you, ad-free
-- FARU Groups: $9.99/mo billed to the club — event ride hubs, club ride series; members still ride and ask for DD help for free
-- FARU Groups Pro: $24.99/mo billed to the club — Groups plus officer roles, Command, I’m here / check-out plans, waitlist, Driver on Duty, chapter report, council
-- Groups How-To: https://www.improvestu.com/faru/groups/how-to/ (member / officer / advisor / host). FARU Groups is a club/organization night board. Officers close gaps. Students still claim the ride.
-
-## Downloads
+## FARU — Find A Ride University
+- URL: https://www.improvestu.com/faru/
+- Campus carpool message board: chat first, meet on campus, ride with classmates. Not a taxi or rideshare dispatch service.
 - Google Play: https://play.google.com/store/apps/details?id=com.faru.faru
 - App Store: https://apps.apple.com/us/app/faru-find-a-ride-university/id6801682857
-
-## Legal
 - Privacy: https://www.improvestu.com/faru/privacy/
 - Terms: https://www.improvestu.com/faru/terms/
-- Account deletion: https://www.improvestu.com/faru/account-deletion/
+
+## FASU — Find A Study-Buddy University
+- URL: https://www.improvestu.com/fasu/
+- Campus study matching: find classmates by course, schedule, and study style. Study Now, flashcards, tutoring discovery, accountability. No AI tutors.
+- Free core for verified students; FASU+ $4.99/mo or $49.99/yr
+- Google Play: https://play.google.com/store/apps/details?id=com.fasu.fasu
+- Privacy: https://www.improvestu.com/fasu/privacy/
+- Terms: https://www.improvestu.com/fasu/terms/

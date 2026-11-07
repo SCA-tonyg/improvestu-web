@@ -5,6 +5,7 @@
   --muted: #8b93a7;
   --line: #1c2230;
   --faru: #00e5ff;
+  --fasu: #3ddc97;
   --fabu: #a6dc2e;
   --fasu: #3ddc97;
   --warm: #e8ffb0;
@@ -286,6 +287,10 @@ a:hover {
   color: var(--faru);
 }
 
+.product-fasu .product-kicker {
+  color: var(--fasu);
+}
+
 .product-fabu .product-kicker {
   color: var(--fabu);
 }
@@ -312,6 +317,10 @@ a:hover {
 
 .product-faru .product-title-link:hover {
   text-decoration-color: var(--faru);
+}
+
+.product-fasu .product-title-link:hover {
+  text-decoration-color: var(--fasu);
 }
 
 .product-fabu .product-title-link:hover {
@@ -372,8 +381,13 @@ a:hover {
   margin-top: 0.15rem;
 }
 
+.product-fasu .store-btn.is-placeholder,
 .product-faru .store-btn.is-placeholder {
   border-color: rgba(0, 229, 255, 0.28);
+}
+
+.product-fasu .store-btn.is-placeholder {
+  border-color: rgba(61, 220, 151, 0.28);
 }
 
 .product-fabu .store-btn.is-placeholder {
@@ -569,6 +583,10 @@ a:hover {
   color: var(--fabu);
 }
 
+.legal-fasu .legal-doc h1 {
+  color: var(--fasu);
+}
+
 .legal-faru .legal-doc h1 {
   color: var(--faru);
 }
@@ -639,10 +657,24 @@ a:hover {
     linear-gradient(180deg, #0a1206 0%, var(--bg) 42%, #05080a 100%);
 }
 
+.atmosphere-fasu {
+  background:
+    radial-gradient(ellipse 95% 65% at 12% -8%, rgba(61, 220, 151, 0.22), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 92% 18%, rgba(245, 224, 74, 0.1), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 45% 100%, rgba(20, 90, 70, 0.22), transparent 55%),
+    linear-gradient(180deg, #061410 0%, var(--bg) 42%, #04080a 100%);
+}
+
 .theme-faru {
   --accent: var(--faru);
   --accent-soft: rgba(0, 229, 255, 0.14);
   --accent-line: rgba(0, 229, 255, 0.32);
+}
+
+.theme-fasu {
+  --accent: var(--fasu);
+  --accent-soft: rgba(61, 220, 151, 0.14);
+  --accent-line: rgba(61, 220, 151, 0.32);
 }
 
 .theme-fabu {
@@ -684,6 +716,10 @@ a:hover {
 
 .theme-faru .eyebrow {
   color: var(--faru);
+}
+
+.theme-fasu .eyebrow {
+  color: var(--fasu);
 }
 
 .theme-fabu .eyebrow {
@@ -1546,9 +1582,31 @@ img.founder-photo {
 }
 
 .theme-faru .legal-line a,
+.theme-fasu .legal-line a,
 .theme-fabu .legal-line a {
   color: var(--accent);
   font-weight: 600;
+}
+
+.theme-fasu .store-btn:not(.is-placeholder) {
+  border-color: color-mix(in srgb, var(--fasu) 45%, var(--line));
+}
+
+.hero-marks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-marks .hero-mark {
+  width: min(42%, 200px);
+  position: relative;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
 }
 
 .product-page .foot a {
